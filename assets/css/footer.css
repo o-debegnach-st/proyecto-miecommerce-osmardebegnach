@@ -1,0 +1,21 @@
+footer {
+    border-top: 1px solid #CCCCCC;
+    color: #999999;
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.footer-social, .footer-apps{
+    display: flex;
+    gap: 23px;
+    align-items: center;
+}
+
+.app {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
