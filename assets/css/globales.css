@@ -55,7 +55,6 @@ nav.categorias {
   justify-content: space-around;
   align-items: stretch;
   width: 80%;
-  height: 128px;
   padding: 16px 0;
   margin: 56px auto;
   background-color: var(--negro);
@@ -68,9 +67,10 @@ nav.categorias .navlink {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-right: solid 2px var(--blanco);
   align-items: center;
   width: 100%;
+  padding: 14px 0px;
+  border-right: solid 2px var(--blanco);
 }
 
 nav.categorias .navlink:last-child {
@@ -83,5 +83,17 @@ nav.categorias .navlink img{
 
 nav.categorias .navlink:hover img{
     transform: scale(1.2) translateY(-10px);
+}
+
+@media screen and (max-width: 1000px) {
+    nav.categorias{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        row-gap: 18px;
+    }
+
+    nav.categorias .navlink:nth-child(4n) {
+        border: none;
+    }
 }
 /* Fin estilo de barra de categorias */

@@ -3,12 +3,13 @@
 /* Inicio estilo de combos */
 section.hero-products-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   background-color: var(--verde);
-  height: 256px;
   gap: 16px;
   margin-top: 80px;
   padding: 0 10%;
+  overflow: visible;
 }
 
 article.hero-product {
@@ -17,10 +18,12 @@ article.hero-product {
   display: flex;
   align-items: flex-end;
   height: 265px;
-  width: 504px;
   border-radius: 16px;
   background-size: cover;
+  background-position: center;
   overflow: hidden;
+  flex: 1 1 400px;
+  box-shadow: 0px 4px 8px 0px #00000040;
 }
 
 article.hero-product .contenido {
@@ -49,25 +52,22 @@ article#combo-hbo {
 
 /* Fin estilo de combos */
 
-
-
-
 /* Inicio seccion de principal */
 
-main#seccion-principal{
-    margin: 48px 10%;
+main#seccion-principal {
+  margin: 48px 10%;
 }
 
-main#seccion-principal section#interes{
-    margin-bottom: 32px;
+main#seccion-principal section#interes {
+  margin-bottom: 32px;
 }
 
 main#seccion-principal section .grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 16px;
-    margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 16px;
+  margin-top: 24px;
 }
 
 /* Fin seccion de principal */
