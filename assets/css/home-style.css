@@ -65,7 +65,7 @@ main#seccion-principal section#interes{
 main#seccion-principal section .grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 16px;
     margin-top: 24px;
 }
