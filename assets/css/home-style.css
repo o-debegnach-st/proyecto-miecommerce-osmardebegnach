@@ -1,0 +1,73 @@
+@import url("./globales.css");
+
+/* Inicio estilo de combos */
+section.hero-products-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--verde);
+  height: 256px;
+  gap: 16px;
+  margin-top: 80px;
+  padding: 0 10%;
+}
+
+article.hero-product {
+  position: relative;
+  bottom: 24px;
+  display: flex;
+  align-items: flex-end;
+  height: 265px;
+  width: 504px;
+  border-radius: 16px;
+  background-size: cover;
+  overflow: hidden;
+}
+
+article.hero-product .contenido {
+  display: flex;
+  width: 100%;
+  font-size: 20px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  color: var(--blanco);
+  padding: 8px;
+}
+
+article.hero-product .contenido img {
+  margin-right: 16px;
+}
+
+article.hero-product .contenido h3 {
+  font-size: 1em;
+}
+article#combo-disney {
+  background-image: url("../images/fondo-combo-disney.png");
+}
+
+article#combo-hbo {
+  background-image: url("../images/fondo-combo-hbo.png");
+}
+
+/* Fin estilo de combos */
+
+
+
+
+/* Inicio seccion de principal */
+
+main#seccion-principal{
+    margin: 48px 10%;
+}
+
+main#seccion-principal section#interes{
+    margin-bottom: 32px;
+}
+
+main#seccion-principal section .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+/* Fin seccion de principal */

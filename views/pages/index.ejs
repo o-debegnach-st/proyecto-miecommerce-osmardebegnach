@@ -1,1 +1,78 @@
-<h1>holis</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/home-style.css" />
+  </head>
+  <body>
+    <section id="hero-products" class="hero-products-container">
+      <article id="combo-disney" class="hero-product">
+        <div class="contenido">
+          <img
+            src="/images/img-combo-disney.png"
+            alt="Imagen del combo de disney plus y star plus"
+          />
+          <div class="texto">
+            <h3 class="hero-product-titulo">50% OFF en Combo Plus</h3>
+            <p class="hero-product-descripcion">
+              Canjeando 50.000 puntos MiEcommerce
+            </p>
+          </div>
+        </div>
+      </article>
+      <article id="combo-hbo" class="hero-product">
+        <div class="contenido">
+          <img
+            src="/images/img-combo-hbo.png"
+            alt="Imagen del combo de disney plus y star plus"
+          />
+          <div class="texto">
+            <h3 class="hero-product-titulo">50% OFF en HBO Max</h3>
+            <p class="hero-product-descripcion">
+              Canjeando 50.000 puntos MiEcommerce
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <main id="seccion-principal">
+      <section id="interes">
+        <h2 class="titulo">Te puede interesar</h2>
+        <div class="grid">
+          <article class="card-producto">
+            <img src="images/whiskey.png" alt="imagen del producto" />
+            <div class="contenido">
+              <div class="contenedor-titulo">
+                <h4 class="titulo">Whiskey Jack Daniels Honey 750ml</h4>
+              </div>
+              <div class="contenedor-precio">
+                <p class="precio">19.900</p>
+                <span>PUNTOS</span>
+              </div>
+            </div>
+          </article>
+          
+          <% for( let i = 0; i < 3; i++ ) { %> <%-
+						include('../partials/genericProductCard.ejs') -%> <% } %>
+        </div>
+      </section>
+
+      <section id="mas-vendidos">
+        <h2 class="titulo">Mas vendidos</h2>
+        <div class="grid">
+          <article class="card-producto">
+            <img src="images/lata-coca-cola.png" alt="imagen del producto" />
+            <div class="contenido">
+              <h4 class="titulo">Coca Cola Lata 220mL Pack Original x8</h4>
+              <p class="precio">19.900</p>
+              <span>PUNTOS</span>
+            </div>
+          </article>
+
+          <% for( let i = 0; i < 7; i++ ) { %> <%-
+          include('../partials/genericProductCard.ejs') -%> <% } %>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
