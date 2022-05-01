@@ -7,6 +7,7 @@ app.set('port', process.env.port || 3000)
 app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.static('assets'));
+app.use(express.static(path.resolve(__dirname,'./assets')));
 
 app.get('/', (req, res, next) =>{
     res.render('pages/index');
