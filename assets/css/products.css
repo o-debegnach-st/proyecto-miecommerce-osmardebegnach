@@ -9,11 +9,10 @@
 
 body{
     background-color:rgb(228, 222, 222);
-
+    min-height: 100%;
 }
 .bodyContainer{
     width:1024px;
-    height:536px;
     margin: 0 auto;
 }
 

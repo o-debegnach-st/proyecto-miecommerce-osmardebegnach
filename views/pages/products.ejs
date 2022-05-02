@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Products</title>
+    <%- include("../partials/head") %>
 </head>
 <body>
-    <section class="bodyContainer">
+    <%- include("../partials/header", {loggedIn: true}) %>
+    <main class="bodyContainer">
         <nav class="menuNav">
             <img class="flechaIzquierda" src="images/Vector.png" alt="flecha">
             <p>Volver al listado</p>
@@ -16,7 +13,7 @@
             <p>Alimentos</p>
 
         </nav>
-        <div class="cardContainer">
+        <section class="cardContainer">
             <ul>
                 <li><img src="images/Rectangle 17.png" alt="img"></li>
                 <li><img src="images/Rectangle 18.png" alt="img"></li>
@@ -48,7 +45,7 @@
                         No incluye vasos, la foto es solo ilustrativa.
                     </p>
             </div>
-        </div>
+        </section>
         <p class="tituloDos">Tambien te puede interesar</p>
         <article class="cardsProductos">
             <div class="cardProductContainer">
@@ -72,9 +69,12 @@
                         </div>
                     </div>
                 <% } %>
-
             </div>
         </article>
-    </section>
+    </main>
+    <%- include('../partials/barraCategorias.ejs') %> 
+
+    <%- include("../partials/footer") %>
+
 </body>
 </html>

@@ -64,9 +64,6 @@ app.get('/register', (req, res, next) =>{
 app.get('/login', (req, res, next) =>{
     res.render('pages/login');
 })
-app.get('/userMenu',(req,res,next)=>{
-    res.render('pages/userMenu');
-})
 
 path.resolve(__dirname, './assets')
 

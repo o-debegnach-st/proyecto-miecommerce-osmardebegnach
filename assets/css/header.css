@@ -26,7 +26,7 @@ header {
     margin-right: 40px;
     border-radius: 30px;
     border: 1px solid rgba(0, 0, 0, 0.5);
-    background: url(/img/Search.svg) no-repeat 98%;
+    background: url(/images/Search.svg) no-repeat 98%;
     background-size: 20px;
     background-color: white;
 }
