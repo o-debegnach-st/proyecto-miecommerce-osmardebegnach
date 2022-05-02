@@ -1,0 +1,23 @@
+<!-- 
+  Recibe un objeto literal de nombre producto con la siguiente estructura
+  {
+    urlImagen: string,
+    nombre:string,
+    precio: string
+  }
+
+ -->
+
+
+ <article class="card-producto">
+  <img src="<%= producto.urlImagen %> " alt="imagen del producto" />
+  <div class="contenido">
+    <div class="contenedor-titulo">
+      <h4 class="titulo"><%= producto.nombre %> </h4>
+    </div>
+    <div class="contenedor-precio">
+      <p class="precio"><%= producto.precio %> </p>
+      <span>PUNTOS</span>
+    </div>
+  </div>
+</article>

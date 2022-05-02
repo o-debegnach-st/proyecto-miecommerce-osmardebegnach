@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Cart</title>
-</head>
-<body>
-    <section class="bodyContainer">
-        <nav class="menuNav">
-            <img class="flechaIzquierda" src="images/Vector.png" alt="flecha">
-            <p>Volver</p>
-        </nav>
-
-    </section>
-</body>
+    <%- include("../partials/head") %>
+    <body>
+        <%- include("../partials/header", {loggedIn: true}) %>
+        <div class="cart">
+            <a href="/" class="back-button">
+                <i class="fa-solid fa-arrow-left"></i>
+                Volver
+            </a>
+            <h2>Productos en tu Carrito</h2>
+            <section class="cart-products">
+                <%- include("../partials/cartProduct", {
+                    nombre: "Jack Daniel's Tennessee Honey Botella 750mL",
+                    cantidad: 1,
+                    puntos: "19.900",
+                    imagen: "/img/whisky.png"
+                }) %>
+                <%- include("../partials/cartProduct", {
+                    nombre: "1 Combo Hamburguesa",
+                    cantidad: 1,
+                    puntos: "5.000",
+                    imagen: "/img/hamburguesa.png"
+                }) %>
+                <%- include("../partials/cartProduct", {
+                    nombre: "Coca Cola Lata 220mL Pack Original x8",
+                    cantidad: 2,
+                    puntos: "1.520",
+                    imagen: "/img/cocacola.png"
+                }) %>
+            </section>
+        </div>
+        <%- include("../partials/footer") %>
+    </body>
 </html>

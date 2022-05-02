@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Open Sans', serif;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.firstSectionRegister{
+    height:300px;
+    width:100%;
+    background-color: rgba(12, 176, 147, 1);
+    border-top-color: black;
+}
+
+.registerForm{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.registerForm article{
+    display:flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.registerForm article p a  {
+    text-decoration: underline;
+}
+
+.container{
+    padding-left:30px;
+    padding-right:30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.tituloRegister{
+    margin-bottom: 15px;
+}
+
+.tituloRegister h1{
+    font-size: 40px;
+}
+
+.input-form{
+    width: 350px;
+    height: 32px;
+    border-radius: 16px;
+    padding: 8px 16px;
+    color: rgba(153, 153, 153, 1);
+    display: block;
+    margin-bottom: 15px;
+}
+
+.button-form{
+    width: 100%;
+    height: 32px;
+    border-radius: 16px;
+    color: white;
+    background-color:rgba(73, 79, 81, 1);
+    display: block;
+}
+
+
+
+
+@media (min-width: 1399.98px) {
+    .registerForm{
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+}
+
+
+
+
+
+
+
