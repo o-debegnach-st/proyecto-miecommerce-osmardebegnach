@@ -48,26 +48,8 @@
         <p class="tituloDos">Tambien te puede interesar</p>
         <article class="cardsProductos">
           <div class="cardProductContainer">
-            <% for( let index=0; index < 4; index++ ) { %>
-              <div class="cardProduct">
-                <img class="productImage" src="images/Rectangle 2.png" alt="">
-                <div class="cardInfoContainer">
-                  <h4>NOMBRE DEL <br>
-                    PRODUCTO O<br> SERVICIO
-                    </h3>
-                    <div class="div-line"></div>
-                    <p class="cardPuntos">
-
-                      <%= products[index].puntos %>
-                        <br>
-                        <span class="text">
-                          PUNTOS
-                        </span>
-                    </p>
-
-                </div>
-              </div>
-              <% } %>
+            <% products.forEach(producto => { %> <%-
+              include('../partials/productCard.ejs', {producto}) -%> <% }) %>
           </div>
         </article>
       </main>
