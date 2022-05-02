@@ -12,7 +12,7 @@ en la raiz se encuentra el modulo app.js, dentro de la cual se importa express p
  *  [nodemon]: Version 2.0.16
 
 ## instalacion 
-    npm init
+    npm install 
 
 ### pages
 
