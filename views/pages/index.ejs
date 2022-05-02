@@ -3,6 +3,56 @@
     <%- include("../partials/head") %>
     <body>
         <%- include("../partials/header", {loggedIn: true}) %>
+        <%- include('../partials/barraCategorias.ejs') -%> 
+    <section id="hero-products" class="hero-products-container">
+      <article id="combo-disney" class="hero-product">
+        <div class="contenido">
+          <img
+            src="/images/img-combo-disney.png"
+            alt="Imagen del combo de disney plus y star plus"
+          />
+          <div class="texto">
+            <h3 class="hero-product-titulo">50% OFF en Combo Plus</h3>
+            <p class="hero-product-descripcion">
+              Canjeando 50.000 puntos MiEcommerce
+            </p>
+          </div>
+        </div>
+      </article>
+      <article id="combo-hbo" class="hero-product">
+        <div class="contenido">
+          <img
+            src="/images/img-combo-hbo.png"
+            alt="Imagen del combo de disney plus y star plus"
+          />
+          <div class="texto">
+            <h3 class="hero-product-titulo">50% OFF en HBO Max</h3>
+            <p class="hero-product-descripcion">
+              Canjeando 50.000 puntos MiEcommerce
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <main id="seccion-principal">
+      <section id="interes">
+        <h2 class="titulo">Te puede interesar</h2>
+        <div class="grid">
+          <% interes.forEach(producto => { %> <%-
+          include('../partials/productCard.ejs', {producto}) -%> <% }) %>
+        </div>
+      </section>
+
+      <section id="mas-vendidos">
+        <h2 class="titulo">Mas vendidos</h2>
+        <div class="grid">
+          <% masVendidos.forEach(producto => { %> <%-
+          include('../partials/productCard.ejs', {producto}) -%> <% }) %>
+        </div>
+      </section>
+    </main>
+    <%- include('../partials/barraCategorias.ejs') %> 
         <%- include("../partials/footer") %>
     </body>
 </html>
