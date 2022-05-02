@@ -37,6 +37,7 @@ h2 {
 .cart-product-info-left {
     display: flex;
     align-items: center;
+    font-size: 18px;
     gap: 8px;
 }
 .cart-product-info-right {
