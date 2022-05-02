@@ -1,14 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
-
-* {
-    margin: 0;
-    box-sizing: border-box;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Open Sans', serif;
-    font-style: normal;
-    font-weight: normal;
+main{
+    height: calc(100vh - 170px);
 }
 
 .firstSection{
@@ -56,6 +47,7 @@
 
 .titulo h1{
     font-size: 40px;
+    font-weight: normal;
 }
 
 .input-form{
@@ -83,7 +75,7 @@
 @media (min-width: 1399.98px) {
     .Form{
         position: absolute;
-        top: 30%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
 

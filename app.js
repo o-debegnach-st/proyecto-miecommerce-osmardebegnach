@@ -52,9 +52,11 @@ app.get('/checkout', (req, res, next) =>{
     res.render('pages/checkout', {loggedIn});
 })
 app.get('/register', (req, res, next) =>{
+    loggedIn = false
     res.render('pages/register', {loggedIn});
 })
 app.get('/login', (req, res, next) =>{
+    loggedIn = false
     res.render('pages/login', {loggedIn});
 })
 

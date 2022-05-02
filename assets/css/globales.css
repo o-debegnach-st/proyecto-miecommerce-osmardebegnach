@@ -21,7 +21,7 @@ body {
   background-color: var(--gris-claro);
   min-height: 100vh;
   position: relative;
-  margin-top: 100px !important;
+  padding-top: 85px !important;
 }
 
 /* Inicio estilo carta de producto */
