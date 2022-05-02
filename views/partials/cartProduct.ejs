@@ -6,9 +6,15 @@
     <div class="cart-product-info-right">
         <a href="#" class="cart-button">Quitar</a>
         <div class="number-input">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="input-number-left">-</button>
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="input-number-left" 
+            aria-label="Restar 1 producto">
+                -
+            </button>
             <input class="cart-product-number" type="number" value=<%= cantidad %> min="1">
-            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="input-number-right">+</button>
+            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="input-number-right"
+            aria-label="Sumar 1 producto">
+                +
+            </button>
         </div>
         <p class="cart-bold"><%= puntos %></p>
     </div>
