@@ -1,61 +1,46 @@
 <!DOCTYPE html>
 <html lang="es-ES">
+<%- include('../partials/head.ejs', {ruta:'/css/login.css'}) %>
 
-<%- include('../partials/head.ejs') %>
-<link href="css/login.css" rel="stylesheet"  type="text/css"/>
-<body>
+  <body>
 
-<main>
+    <%- include("../partials/header", {loggedIn, searchBar: true}) %>
+    
+    <main>
+      <div class="firstSectionLogin">
+      </div>
 
-    <section class="firstSectionLogin">
-    </section>
-
-
-    <div class="loginForm">
+      <section class="loginForm">
         <div class="container">
-            <div class="tituloLogin">
-                <h1>¡Hola!</h1>
-            </div>
-            <form action="#" method="POST" class="inputsLogin">
+          <div class="tituloLogin">
+            <h1>¡Hola!</h1>
+          </div>
+          <form action="/" method="GET" class="inputsLogin">
             <div class="inputsButton">
-                    <label>
-                        <input class="input-form" id="email" type="email" name="email" placeholder="Tu nombre de usuario" />
-                    </label>
-                    <label>
-                    <input class="input-form" id="password" type="password" autocomplete="off" name="password" placeholder="Tu contraseña" />
-                    </label>
-                <button class="button-form" type="submit" name="">Iniciar Sesiòn</button>
+              <label>
+                <input class="input-form" id="email" type="email" name="email" placeholder="Tu nombre de usuario" />
+              </label>
+              <label>
+                <input class="input-form" id="password" type="password" autocomplete="off" name="password"
+                  placeholder="Tu contraseña" />
+              </label>
+              <button class="button-form" type="submit" name="">Iniciar Sesiòn</button>
             </div>
-        </form>
+          </form>
         </div>
         <article>
-            <p>No tienes cuenta?
-                <a href="/register">
-                    Registrate
-                </a>
-            </p>
+          <p>No tienes cuenta?
+            <a href="/register">
+              Registrate
+            </a>
+          </p>
         </article>
-    </div>
+      </section>
+      <div class="secondSectionLogin">
+      </div>
 
+    </main>
+    <%- include("../partials/footer") %>
 
-
-
-
-
-
-
-    <section class="secondSectionLogin">
-    </section>
-
-</main>
-
-
-
-
-</body>
-
-
-
-
-
+  </body>
 </html>

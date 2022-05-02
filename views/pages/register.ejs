@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="es-ES">
 
-<%- include('../partials/head.ejs') %>
-<link href="css/register.css" rel="stylesheet"  type="text/css"/>
+<%- include('../partials/head.ejs', {ruta: 'css/register.css'}) %>
 <body>
 
+    <%- include("../partials/header", {loggedIn, searchBar: false}) %>
 <main>
 
-    <section class="firstSectionRegister">
-    </section>
+    <div class="firstSectionRegister">
+    </div>
 
 
-    <div class="registerForm">
+    <section class="registerForm">
         <div class="container">
             <div class="tituloregister">
                 <h1>¡Registrate!</h1>
             </div>
-            <form action="#" method="POST" class="inputsregister">
+            <form action="/" method="GET" class="inputsregister">
                 <div class="inputsButton">
                     <label>
                         <input class="input-form" id="email" type="email" name="email" placeholder="Tu Email" />
                     </label>
                     <label>
-                        <input class="input-form"  type="password" autocomplete="off" placeholder="Tu nueva contraseña" />
+                        <input class="input-form"  type="password" name="password" autocomplete="off" placeholder="Tu nueva contraseña" />
                     </label>
                     <label>
                         <input class="input-form"  type="password" autocomplete="off"  placeholder="Repite tu contraseña" />
@@ -38,21 +38,14 @@
                 </a>
             </p>
         </article>
-    </div>
-
-
-
-
-
-
-
-
-    <section class="secondSectionRegister">
     </section>
+    
+    <div class="secondSectionRegister">
+    </div>
 
 </main>
 
-
+<%- include("../partials/footer") %>
 
 
 </body>

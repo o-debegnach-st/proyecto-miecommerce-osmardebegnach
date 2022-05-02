@@ -37,6 +37,8 @@ let generico = {
 let interes = [whiskey, generico, generico, generico]
 let masVendidos = [coca, generico, generico, generico, generico, generico, generico, generico]
 
+
+let loggedIn = false;
 app.set('port', process.env.port || 3000) 
 
 app.set('view engine', 'ejs');
@@ -45,24 +47,32 @@ app.use(express.static('assets'));
 app.use(express.static(path.resolve(__dirname,'./assets')));
 
 app.get('/', (req, res, next) =>{
+
+    if(req.query.email !== undefined){
+        loggedIn = true
+        console.log('entro');
+    }
     res.render('pages/index', {
-        interes, masVendidos
+        interes, masVendidos, loggedIn
     });
 })
 app.get('/products', (req, res, next) =>{
-    res.render('pages/products',{products:products});
+    res.render('pages/products',{
+        products:products,
+        loggedIn
+    });
 })
 app.get('/cart', (req, res, next) =>{
-    res.render('pages/cart');
+    res.render('pages/cart', {loggedIn});
 })
 app.get('/checkout', (req, res, next) =>{
-    res.render('pages/checkout');
+    res.render('pages/checkout', {loggedIn});
 })
 app.get('/register', (req, res, next) =>{
-    res.render('pages/register');
+    res.render('pages/register', {loggedIn});
 })
 app.get('/login', (req, res, next) =>{
-    res.render('pages/login');
+    res.render('pages/login', {loggedIn});
 })
 
 path.resolve(__dirname, './assets')

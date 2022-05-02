@@ -23,7 +23,6 @@ header {
     width: 65%;
     height: 32px;
     padding-left: 20px;
-    margin-right: 40px;
     border-radius: 30px;
     border: 1px solid rgba(0, 0, 0, 0.5);
     background: url(/images/Search.svg) no-repeat 98%;
@@ -74,4 +73,25 @@ header {
     border-radius: 20px;
     padding-right: 15px;
     text-decoration: none;
+}
+
+.navbtn {
+    padding: 7px 15px;
+    background-color: var(--gris-oscuro);
+    color: var(--blanco);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: .3s;
+}
+
+.navbtn:hover {
+    background-color: var(--verde);
+}
+
+.navbtn.primary {
+    background-color: var(--verde);
+}
+
+.navbtn.primary:hover {
+    background-color: var(--gris-oscuro);
 }
