@@ -11,15 +11,17 @@
                 <i class="fa-solid fa-cart-shopping "></i>
                 <div class="header-shopping-cart-number">2</div>
             </a>
-            <a href="#" class="header-icon header-user-card">
+            <a href="#" class="header-icon header-user-card"
+                onclick="document.getElementById('userMenu').classList.toggle('visible')">
                 <img src="/images/Ellipse 1.svg" alt="Foto de usuario">
                 <span>Olivia</span>
+                <%- include('../partials/userMenu.ejs') -%>
             </a>
         </nav>
-    <% } else { %>
-        <nav class="header-nav">
-            <a class="navbtn primary" href="/login">Iniciar Sesion</a>
-            <a class="navbtn" href="/register">Registrarse</a>
-        </nav>
-    <% } %> 
-</header>
+        <% } else { %>
+            <nav class="header-nav">
+                <a class="navbtn primary" href="/login">Iniciar Sesion</a>
+                <a class="navbtn" href="/register">Registrarse</a>
+            </nav>
+        <% } %>
+</he

@@ -5,44 +5,42 @@
   <body>
 
     <%- include("../partials/header", {loggedIn, searchBar: false}) %>
-    
-    <main>
 
-    <div class="firstSection">
-    </div>
-
-
-    <section class="Form">
-        <div class="container">
+      <main>
+        <div class="firstSection">
+        </div>
+        <section class="Form">
+          <div class="container">
             <div class="titulo">
-                <h1>¡Hola!</h1>
+              <h1>¡Hola!</h1>
             </div>
             <form action="/" method="GET" class="inputs">
-            <div class="inputsButton">
-              <label>
-                <input class="input-form" id="email" type="email" name="email" placeholder="Tu nombre de usuario" />
-              </label>
-              <label>
-                <input class="input-form" id="password" type="password" autocomplete="off" name="password"
-                  placeholder="Tu contraseña" />
-              </label>
-              <button class="button-form" type="submit" name="">Iniciar Sesiòn</button>
-            </div>
-          </form>
+              <div class="inputsButton">
+                <label>
+                  <input class="input-form" id="email" type="email" name="email" placeholder="Tu nombre de usuario" />
+                </label>
+                <label>
+                  <input class="input-form" id="password" type="password" autocomplete="off" name="password"
+                    placeholder="Tu contraseña" />
+                </label>
+                <button class="button-form" type="submit" name="">Iniciar Sesiòn</button>
+              </div>
+            </form>
+          </div>
+          <article>
+            <p>No tienes cuenta?
+              <a href="/register">
+                Registrate
+              </a>
+            </p>
+          </article>
+        </section>
+        <div class="secondSectionLogin">
         </div>
-        <article>
-          <p>No tienes cuenta?
-            <a href="/register">
-              Registrate
-            </a>
-          </p>
-        </article>
-      </section>
-      <div class="secondSectionLogin">
-      </div>
 
-    </main>
-    <%- include("../partials/footer") %>
+      </main>
+      <%- include("../partials/footer") %>
 
   </body>
+
 </html>
