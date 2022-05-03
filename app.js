@@ -14,7 +14,7 @@ let coca = {
 let generico = {
     urlImagen: 'images/producto-generico.png',
     precio: 'XX.XXX',
-    nombre: 'NOMBRE DEL PRODUCTO O SERVICO'
+    nombre: 'NOMBRE DEL PRODUCTO O SERVICIO'
 } 
 
 let interes = [whiskey, generico, generico, generico]
