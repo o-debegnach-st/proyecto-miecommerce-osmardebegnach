@@ -14,6 +14,7 @@ h2 {
 .back-button {
     font-size: 20px;
     color: black;
+    padding-top: 20px;
 }
 .back-button:visited {
     color: black;
