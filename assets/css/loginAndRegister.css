@@ -60,6 +60,9 @@ main{
     outline: 0 none;
     display: block;
     margin-bottom: 15px;
+    border-style: none;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .button-form{

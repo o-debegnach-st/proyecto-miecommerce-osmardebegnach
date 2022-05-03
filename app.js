@@ -59,6 +59,9 @@ app.get('/login', (req, res, next) =>{
     loggedIn = false
     res.render('pages/login', {loggedIn});
 })
+app.get('/checkout',(req,res)=>{
+    res.render('pages/checkout',{loggedIn})
+})
 
 path.resolve(__dirname, './assets')
 
