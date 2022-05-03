@@ -25,7 +25,6 @@ button {
 }
 
 body {
-  position: relative;
   background-color: var(--gris-claro);
   min-height: 100vh;
   position: relative;
