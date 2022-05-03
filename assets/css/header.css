@@ -91,6 +91,7 @@ header {
     padding-right: 15px;
     text-decoration: none;
     position: relative;
+    cursor: pointer;
 }
 
 .navbtn {

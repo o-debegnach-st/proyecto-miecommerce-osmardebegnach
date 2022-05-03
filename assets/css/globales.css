@@ -20,6 +20,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  border: none;
+}
+
 body {
   position: relative;
   background-color: var(--gris-claro);
@@ -51,8 +55,11 @@ article.card-producto .contenido {
   font-weight: 700;
 }
 
+article.card-producto .contenido .contenedor-titulo .titulo {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 article.card-producto .contenido .contenedor-titulo {
-  width: 150px;
   border-right: solid 1px rgba(0, 0, 0, 0.251);
   padding-right: 8px;
   margin-right: 8px;
