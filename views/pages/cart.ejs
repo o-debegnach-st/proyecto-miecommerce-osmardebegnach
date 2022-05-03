@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head") %>
+    <%- include("../partials/head", {ruta: '/css/cart.css'}) %>
     <body>
-        <%- include("../partials/header", {loggedIn: true}) %>
+        <%- include("../partials/header", {loggedIn, searchBar: true}) %>
         <div class="cart">
             <a href="/" class="back-button">
                 <i class="fa-solid fa-arrow-left"></i>
@@ -28,6 +28,13 @@
                     puntos: "1.520",
                     imagen: "/images/cocacola.png"
                 }) %>
+            </section>
+            <section class="cart-checkout">
+                <div class="cart-checkout-total">
+                    <span>Total de puntos</span>
+                    <span class="cart-bold">26.420</span>
+                </div>
+                <a href="/checkout" class="cart-button cart-checkout-button">Ir a Pagar</a>
             </section>
         </div>
         <%- include("../partials/footer") %>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%- include("../partials/head") %>
+    <%- include("../partials/head", {ruta: '/css/home-style.css'}) %>
     <body>
-        <%- include("../partials/header", {loggedIn: true}) %>
+        <%- include("../partials/header", {loggedIn, searchBar: true}) %>
         <%- include('../partials/barraCategorias.ejs') -%> 
     <section id="hero-products" class="hero-products-container">
       <article id="combo-disney" class="hero-product">
@@ -53,6 +53,6 @@
       </section>
     </main>
     <%- include('../partials/barraCategorias.ejs') %> 
-        <%- include("../partials/footer") %>
+    <%- include("../partials/footer") %>
     </body>
 </html>

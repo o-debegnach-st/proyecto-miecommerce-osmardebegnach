@@ -1,80 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include("../partials/head") %>
-</head>
-<body>
-    <%- include("../partials/header", {loggedIn: true}) %>
+<%- include("../partials/head", {ruta: '/css/products.css'}) %>
+
+  <body>
+    <%- include("../partials/header", {loggedIn, searchBar: true}) %>
     <main class="bodyContainer">
         <nav class="menuNav">
-            <img class="flechaIzquierda" src="images/Vector.png" alt="flecha">
-            <p>Volver al listado</p>
-            <img class="flechaDerecha" src="images/Vector (1).png" alt="flecha">
-            <p>Alimentos</p>
+          <img class="flechaIzquierda" src="images/Vector.png" alt="flecha">
+          <p>Volver al listado</p>
+          <img class="flechaDerecha" src="images/Vector (1).png" alt="flecha">
+          <p>Alimentos</p>
 
         </nav>
         <section class="cardContainer">
-            <ul>
-                <li><img src="images/Rectangle 17.png" alt="img"></li>
-                <li><img src="images/Rectangle 18.png" alt="img"></li>
-                <li><img src="images/Rectangle 19.png" alt="img"></li>
-            </ul>
-            <img src="images/Rectangle 21.png" alt="img">
-            <div class="infoContainer">
-                <p class="nombreProducto">Whiskey Jack Daniels <br>Honey 750ml</p>
-                    <div class="puntajeContainer">
-                        <h3>19.900</h3>
-                        <p class="puntos">PUNTOS</p>
-                    </div>
-                    <button class="agregarCarrito">Agregar al carrito</button>
-                    <p class="descripcionProducto">
-                        Un verdaderamente fabuloso licor de whiskey Jack<br>
-                        Daniels. Esta hecho con una mezcla de ricas<br>
-                        wapwcias y suave, miel tersa y el resultaodo es <br>
-                        delicioso sobre hielo o cafe<br>
-                        <br>
-                        Aroma de caramelo y roble carbonizado, un poco <br>
-                        de flor de naranja, miel de manuka y vainilla.<br>
-                        <br>
-                        Boca: grueso y cremoso, con notas de vainilla,<br>
-                        roble tostado, miel de nuevo, un poco de<br>
-                        albaricoque tambien.<br>
-                        <br>
-                        Acabado: De buena longitus - redondeado y rico.<br>
-                        <br>
-                        No incluye vasos, la foto es solo ilustrativa.
-                    </p>
+          <ul>
+            <li><img src="images/Rectangle 17.png" alt="img"></li>
+            <li><img src="images/Rectangle 18.png" alt="img"></li>
+            <li><img src="images/Rectangle 19.png" alt="img"></li>
+          </ul>
+          <img src="images/Rectangle 21.png" alt="img">
+          <div class="infoContainer">
+            <p class="nombreProducto">Whiskey Jack Daniels <br>Honey 750ml</p>
+            <div class="puntajeContainer">
+              <h3>19.900</h3>
+              <p class="puntos">PUNTOS</p>
             </div>
+            <button class="agregarCarrito">Agregar al carrito</button>
+            <p class="descripcionProducto">
+              Un verdaderamente fabuloso licor de whiskey Jack<br>
+              Daniels. Esta hecho con una mezcla de ricas<br>
+              wapwcias y suave, miel tersa y el resultaodo es <br>
+              delicioso sobre hielo o cafe<br>
+              <br>
+              Aroma de caramelo y roble carbonizado, un poco <br>
+              de flor de naranja, miel de manuka y vainilla.<br>
+              <br>
+              Boca: grueso y cremoso, con notas de vainilla,<br>
+              roble tostado, miel de nuevo, un poco de<br>
+              albaricoque tambien.<br>
+              <br>
+              Acabado: De buena longitus - redondeado y rico.<br>
+              <br>
+              No incluye vasos, la foto es solo ilustrativa.
+            </p>
+          </div>
         </section>
         <p class="tituloDos">Tambien te puede interesar</p>
         <article class="cardsProductos">
-            <div class="cardProductContainer">
-                <% for( let index = 0; index < 4; index++ ) { %>
-                    <div class="cardProduct">
-                        <img class="productImage" src="images/Rectangle 2.png" alt="">
-                        <div class="cardInfoContainer">
-                            <h4>NOMBRE DEL <br>
-                            PRODUCTO O<br> SERVICIO
-                            </h3>
-                            <div class="div-line"></div>
-                            <p class="cardPuntos">
-                                
-                                <%= products[index].puntos  %>
-                                <br>
-                                <span class="text">
-                                    PUNTOS
-                                </span>
-                            </p>
-                            
-                        </div>
-                    </div>
-                <% } %>
-            </div>
+          <div class="cardProductContainer">
+            <% products.forEach(producto => { %> <%-
+              include('../partials/productCard.ejs', {producto}) -%> <% }) %>
+          </div>
         </article>
-    </main>
-    <%- include('../partials/barraCategorias.ejs') %> 
+      </main>
+      <%- include('../partials/barraCategorias.ejs') %>
 
-    <%- include("../partials/footer") %>
+        <%- include("../partials/footer") %>
 
-</body>
+  </body>
+
 </html>
