@@ -51,6 +51,13 @@ const getMostwantedProducts = async () => {
 	}
 };
 
+const suggestedProducts = (req, res) => {
+    getSuggestedProducts().then(data => res.json(data.slice(0, 5)))
+}
+const mostwantedProducts = (req, res) => {
+    getMostwantedProducts().then(data => res.json(data.slice(0, 10)))
+}
+
 const root = (req, res) => {
 	Promise.all([getSuggestedProducts(), getMostwantedProducts()]).then((values) => {
 		let suggested = values[0]
@@ -81,4 +88,4 @@ const checkout = (req, res, next) => {
 	res.render("pages/checkout", { loggedIn: false });
 };
 
-module.exports = { root, products, cart, checkout };
+module.exports = { root, products, suggestedProducts, mostwantedProducts, cart, checkout };
