@@ -4,7 +4,7 @@
 
   <body>
 
-    <%- include("../partials/header", {loggedIn, searchBar: false}) %>
+    <%- include("../partials/header", {loggedIn: false, searchBar: false}) %>
 
       <main>
         <div class="firstSection">
@@ -23,12 +23,12 @@
                   <input class="input-form" id="password" type="password" autocomplete="off" name="password"
                     placeholder="Tu contraseña" />
                 </label>
-                <button class="button-form" type="submit" name="">Iniciar Sesión</button>
+                <button class="button-hover button-form" type="submit" name="">Iniciar Sesión</button>
               </div>
             </form>
           </div>
           <article>
-            <p>No tienes cuenta?
+            <p>¿No tienes cuenta?
               <a href="/register">
                 Registrate
               </a>

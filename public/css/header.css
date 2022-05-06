@@ -48,13 +48,7 @@ header {
 
 .header-icon {
     color: white;
-    background-color: #494F51;
     padding: 5px;
-}
-
-.header-icon:hover {
-    background-color: #0CB093;
-    transition: 0.5s;
 }
 
 .header-shopping-cart {
@@ -96,15 +90,10 @@ header {
 
 .navbtn {
     padding: 7px 15px;
-    background-color: var(--gris-oscuro);
     color: var(--blanco);
     text-decoration: none;
     border-radius: 30px;
     transition: .3s;
-}
-
-.navbtn:hover {
-    background-color: var(--verde);
 }
 
 .navbtn.primary {
