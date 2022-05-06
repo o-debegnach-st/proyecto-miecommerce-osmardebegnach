@@ -42,8 +42,8 @@ const getSuggestedProducts = async () => {
 };
 
 const getMostwantedProducts = async () => {
-    let response = await fetch(`${apiBaseURL}/products/mostwanted`);
-	try {
+    try {
+        let response = await fetch(`${apiBaseURL}/products/mostwanted`);
 		let data = await response.json();
 		return data;
 	} catch (error) {

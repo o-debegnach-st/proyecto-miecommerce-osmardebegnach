@@ -2,7 +2,7 @@
   string } %>
 
 <article class="card-producto">
-  <a href="/products">
+  <a href=<%= `/products/${producto._id}` %> >
     <img src="<%= producto.image !== '' ? producto.image : 'images/NoImagePlaceHolder.png'%> " alt="imagen del producto" />
     <div class="contenido">
       <div class="contenedor-titulo">
