@@ -2,17 +2,17 @@
   string } %>
 
 <article class="card-producto">
-  <a href="/products">
-    <img src="<%= producto.urlImagen %> " alt="imagen del producto" />
+  <a href=<%= `/products/${producto._id}` %> >
+    <img src="<%= producto.image !== '' ? producto.image : 'images/NoImagePlaceHolder.png'%> " alt="imagen del producto" />
     <div class="contenido">
       <div class="contenedor-titulo">
         <h4 class="titulo">
-          <%= producto.nombre %>
+          <%= producto.title %>
         </h4>
       </div>
       <div class="contenedor-precio">
         <p class="precio">
-          <%= producto.precio %>
+          <%= producto.price %>
         </p>
         <span>PUNTOS</span>
       </div>

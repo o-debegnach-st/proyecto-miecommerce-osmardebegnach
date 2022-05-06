@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs', {ruta: '/css/notFound.css' }) %>
+
+  <body>
+    <%- include('../partials/header.ejs', {searchBar: false, loggedIn:true}) %>
+      <div class="content">
+        <div class="title-container">
+          <h1 class="titulo">404</h1>
+        </div>
+          <h2 class="sub-title">Lo sentimos, página no fue encontrada</h2>
+          <p>La pagina que pidió no pude ser encontrada</p>
+          <a class="btn" href="/">Volver al inicio</a>
+      </div>
+      <%- include('../partials/footer.ejs') %>
+  </body>
+
+</html>
