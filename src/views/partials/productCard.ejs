@@ -1,15 +1,8 @@
-<!-- 
-  Recibe un objeto literal de nombre producto con la siguiente estructura
-  {
-    urlImagen: string,
-    nombre:string,
-    precio: string
-  }
+<%# Recibe un objeto literal de nombre producto con la siguiente estructura { urlImagen: string, nombre:string, precio:
+  string } %>
 
- -->
-
- <article class="card-producto">
-    <a href="/products">
+<article class="card-producto">
+  <a href="/products">
     <img src="<%= producto.urlImagen %> " alt="imagen del producto" />
     <div class="contenido">
       <div class="contenedor-titulo">
@@ -25,4 +18,4 @@
       </div>
     </div>
   </a>
-  </article>
+</article>

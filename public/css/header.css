@@ -19,9 +19,11 @@ header {
     color: #0CB093;
     user-select: none;
 }
+
 .logo-pt1 {
     font-weight: 800;
 }
+
 .logo-pt2 {
     font-weight: 300;
 }
@@ -41,6 +43,7 @@ header {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: white;
 }
 
 .header-icon {
@@ -48,6 +51,7 @@ header {
     background-color: #494F51;
     padding: 5px;
 }
+
 .header-icon:hover {
     background-color: #0CB093;
     transition: 0.5s;
@@ -68,7 +72,6 @@ header {
     font-size: 10px;
     border-radius: 20px;
     background-color: red;
-    color: white;
     position: absolute;
     right: 0;
     top: 0;
@@ -87,6 +90,8 @@ header {
     border-radius: 20px;
     padding-right: 15px;
     text-decoration: none;
+    position: relative;
+    cursor: pointer;
 }
 
 .navbtn {
@@ -108,4 +113,91 @@ header {
 
 .navbtn.primary:hover {
     background-color: var(--gris-oscuro);
+}
+
+/* Inicio User Menu */
+
+.menuContainer {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    width: 206px;
+    height: 220px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.menuContainer a:hover div {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.menuContainer a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.user {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    border-radius: 100px;
+    margin: 10px;
+    height: 50px;
+}
+
+.user p {
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.user img {
+    margin-left: 5px;
+
+}
+
+.opciones {
+    height: 110px;
+    text-align: left;
+    margin-left: 40px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.linea {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.tema {
+    display: flex;
+    justify-content: left;
+}
+
+.tema img {
+    height: 16px;
+    width: 16px;
+    align-self: center;
+    margin-top: 7px;
+    margin-left: 15px;
+}
+
+.tema p {
+    margin-top: 9px;
+    margin-left: 12px;
+}
+
+.hidden {
+    display: none;
 }

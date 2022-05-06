@@ -13,7 +13,8 @@ h2 {
 
 .back-button {
     font-size: 20px;
-    text-decoration: none;
+    color: black;
+    padding-top: 20px;
 }
 .back-button:visited {
     color: black;

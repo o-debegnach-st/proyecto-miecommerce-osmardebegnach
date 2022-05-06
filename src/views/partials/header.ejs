@@ -1,0 +1,27 @@
+<header role="banner">
+    <h1 class="logo">
+        <span class="logo-pt1">Mi</span><span class="logo-pt2">Ecommerce</span>
+    </h1>
+    <% if (searchBar) { %>
+        <input role="search" class="search-bar" type="text" placeholder="Buscar productos...">
+    <% } %>
+    <% if (loggedIn) { %>
+        <nav class="header-nav">
+            <a href="/cart" class="header-icon header-shopping-cart">
+                <i class="fa-solid fa-cart-shopping "></i>
+                <div class="header-shopping-cart-number">2</div>
+            </a>
+            <button class="header-icon header-user-card" 
+            onclick="document.getElementById('userMenu').classList.toggle('hidden')">
+                <img src="/images/Ellipse 1.svg" alt="Foto de usuario">
+                <span>Olivia</span>
+            </button>
+            <%- include('../partials/userMenu.ejs') %>
+        </nav>
+        <% } else { %>
+            <nav class="header-nav">
+                <a class="navbtn primary" href="/login">Iniciar Sesion</a>
+                <a class="navbtn" href="/register">Registrarse</a>
+            </nav>
+        <% } %>
+</header>
