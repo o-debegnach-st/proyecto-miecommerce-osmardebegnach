@@ -23,11 +23,7 @@ const fetch = require("node-fetch");
 const apiBaseURL = "https://dhfakestore.herokuapp.com/api";
 >>>>>>> 0f39c37f1b5dcafed0ea87b3222369ce01596a3c
 
-let whiskey = {
-	urlImagen: "images/whiskey.png",
-	precio: "19.900",
-	nombre: "Whiskey Jack Daniels Honey 750ml",
-};
+
 let coca = {
 	urlImagen: "images/lata-coca-cola.png",
 	precio: "760",
@@ -38,18 +34,6 @@ let generico = {
 	precio: "XX.XXX",
 	nombre: "NOMBRE DEL PRODUCTO O SERVICIO",
 };
-
-let interes = [whiskey, generico, generico, generico];
-let masVendidos = [
-	coca,
-	generico,
-	generico,
-	generico,
-	generico,
-	generico,
-	generico,
-	generico,
-];
 const productos = [coca, generico, generico, generico];
 let loggedIn = false;
 
