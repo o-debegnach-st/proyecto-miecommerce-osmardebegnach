@@ -22,7 +22,7 @@ const loginProcess = (req,res,next) => {
 
     if (userDb) {
         if (req.body.password === userDb.password) {
-            req.app.locals.isLogged = userDb.id
+            req.app.locals.userLogged = userDb
             res.redirect('/')
 
         } else
@@ -48,14 +48,14 @@ const registerPost = (req, res) => {
     const errors = validationResult(req)
     const users = getUsers()
     if (errors.isEmpty()) {
-        const id = users.length + 1
-        req.app.locals.isLogged = id
-        users.push({
+        const newUser = {
             "email": req.body.email,
             "password": req.body.password,
-            "id": id,
+            "id": users.length + 1,
             "cart": []
-        })
+        }
+        req.app.locals.userLogged = newUser
+        users.push(newUser)
         fs.writeFileSync(path.resolve(__dirname,'../db/users.json'), JSON.stringify(users))
         res.redirect("/")
     } else {
@@ -65,7 +65,5 @@ const registerPost = (req, res) => {
         })
     }
 }
-
-
 
 module.exports = { register, login, registerPost, register, login, loginProcess}

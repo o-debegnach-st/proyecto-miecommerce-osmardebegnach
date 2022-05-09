@@ -14,7 +14,7 @@ app.use(express.static(path.resolve(__dirname,'./public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
-app.locals.isLogged = false
+app.locals.userLogged = null
 
 app.use("/", indexRouter)
 app.use("/products", productsRouter)
