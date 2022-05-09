@@ -9,6 +9,6 @@ router.get("/register", register)
 
 router.get("/login", login)
 
-router.post("/login",loginValidate, loginProcess)
+router.post("/login", loginValidate, loginProcess)
 
 module.exports = router

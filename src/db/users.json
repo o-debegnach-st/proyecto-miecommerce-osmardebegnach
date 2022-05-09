@@ -1,1 +1,19 @@
-[{"email":"aquiabuin@gmail.com","password":"eeeeeeeeee","passwordConfirmation":"eeeeeeeeee"}]
+[
+	{ "email": "aquiabuin@gma2il.com", "password": "eeeeeeeeeeeeee", "id": 0 },
+	{
+		"email": "aabuin@santandertecnologia.com.ar",
+		"password": "eeeeeeeeeee",
+		"id": 1
+	},
+	{
+		"email": "aabeeuin@santandertecnologia.com.ar",
+		"password": "eeeeeeeeeee",
+		"id": 2
+	},
+	{
+		"email": "afasfaabeeuin@santandertecnologia.com.ar",
+		"password": "eeeeeeeeeeee",
+		"id": 3
+	},
+	{ "email": "andresdebegnach@gmail.com", "password": "123456789", "id": 4 }
+]

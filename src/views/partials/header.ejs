@@ -5,13 +5,13 @@
     <% if (searchBar) { %>
         <input role="search" class="search-bar" type="text" placeholder="Buscar productos...">
     <% } %>
-    <% if (loggedIn) { %>
+    <% if (locals.isLogged) { %>
         <nav class="header-nav">
-            <a href="/cart" class="header-icon header-shopping-cart">
+            <a href="/cart" class="button-hover header-icon header-shopping-cart">
                 <i class="fa-solid fa-cart-shopping "></i>
                 <div class="header-shopping-cart-number">2</div>
             </a>
-            <button class="header-icon header-user-card" 
+            <button class="button-hover header-icon header-user-card" 
             onclick="document.getElementById('userMenu').classList.toggle('hidden')">
                 <img src="/images/Ellipse 1.svg" alt="Foto de usuario">
                 <span>Olivia</span>
@@ -21,7 +21,7 @@
         <% } else { %>
             <nav class="header-nav">
                 <a class="navbtn primary" href="/login">Iniciar Sesion</a>
-                <a class="navbtn" href="/register">Registrarse</a>
+                <a class="button-hover navbtn" href="/register">Registrarse</a>
             </nav>
         <% } %>
 </header>

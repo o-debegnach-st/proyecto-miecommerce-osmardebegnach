@@ -3,9 +3,7 @@
 <%- include('../partials/head.ejs', {ruta:'/css/loginAndRegister.css'}) %>
 
   <body>
-
-    <%- include("../partials/header", {loggedIn, searchBar: false}) %>
-
+    <%- include("../partials/header", {searchBar: false}) %>
       <main>
         <div class="firstSection">
         </div>
@@ -33,12 +31,12 @@
                     </p>
                   <% } %>
                 </label>
-                <button class="button-form" type="submit">Iniciar Sesión</button>
+                <button class="button-hover button-form" type="submit" name="">Iniciar Sesión</button>
               </div>
             </form>
           </div>
           <article>
-            <p>No tienes cuenta?
+            <p>¿No tienes cuenta?
               <a href="/register">
                 Registrate
               </a>

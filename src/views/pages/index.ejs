@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include("../partials/head", {ruta: '/css/home-style.css'}) %>
-<body>
-<%- include("../partials/header", {loggedIn, searchBar: true}) %>
-<%- include('../partials/barraCategorias.ejs') -%>
-<section id="hero-products" class="hero-products-container">
-  <article id="combo-disney" class="hero-product">
-    <div class="contenido">
-      <img
-              src="/images/img-combo-disney.png"
-              alt="Imagen del combo de disney plus y star plus"
-      />
-      <div class="texto">
-        <h3 class="hero-product-titulo">50% OFF en Combo Plus</h3>
-        <p class="hero-product-descripcion">
-          Canjeando 50.000 puntos MiEcommerce
-        </p>
-      </div>
-    </div>
-  </article>
-  <article id="combo-hbo" class="hero-product">
-    <div class="contenido">
-      <img
-              src="/images/img-combo-hbo.png"
-              alt="Imagen del combo de disney plus y star plus"
-      />
-      <div class="texto">
-        <h3 class="hero-product-titulo">50% OFF en HBO Max</h3>
-        <p class="hero-product-descripcion">
-          Canjeando 50.000 puntos MiEcommerce
-        </p>
-      </div>
-    </div>
-  </article>
-</section>
+    <%- include("../partials/head", {ruta: '/css/home-style.css'}) %>
+    <body>
+        <%- include("../partials/header", {searchBar: true}) %>
+        <%- include('../partials/barraCategorias.ejs') -%> 
+    <section id="hero-products" class="hero-products-container">
+      <article id="combo-disney" class="hero-product">
+        <div class="contenido">
+          <img
+            src="/images/img-combo-disney.png"
+            alt="Imagen del combo de disney plus y star plus"
+          />
+          <div class="texto">
+            <h3 class="hero-product-titulo">50% OFF en Combo Plus</h3>
+            <p class="hero-product-descripcion">
+              Canjeando 50.000 puntos MiEcommerce
+            </p>
+          </div>
+        </div>
+      </article>
+      <article id="combo-hbo" class="hero-product">
+        <div class="contenido">
+          <img
+            src="/images/img-combo-hbo.png"
+            alt="Imagen del combo de disney plus y star plus"
+          />
+          <div class="texto">
+            <h3 class="hero-product-titulo">50% OFF en HBO Max</h3>
+            <p class="hero-product-descripcion">
+              Canjeando 50.000 puntos MiEcommerce
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
 
 <main id="seccion-principal">
   <section id="interes">

@@ -1,52 +1,60 @@
 <!DOCTYPE html>
 <html lang="es-ES">
+<%- include('../partials/head.ejs', {ruta: 'css/loginAndRegister.css' }) %>
 
-<%- include('../partials/head.ejs', {ruta: 'css/loginAndRegister.css'}) %>
-<body>
-
-    <%- include("../partials/header", {loggedIn, searchBar: false}) %>
-<main>
-
-    <div class="firstSection">
-    </div>
-
-
-    <section class="Form">
-        <div class="container">
-            <div class="titulo">
-                <h1>¡Registrate!</h1>
-            </div>
-            <form action="/" method="GET" class="inputsregister">
-                <div class="inputsButton">
-                    <label>
-                        <input class="input-form" id="email" type="email" name="email" placeholder="Tu Email" />
-                    </label>
-                    <label>
-                        <input class="input-form"  type="password" name="password" autocomplete="off" placeholder="Tu nueva contraseña" />
-                    </label>
-                    <label>
-                        <input class="input-form"  type="password" autocomplete="off"  placeholder="Repite tu contraseña" />
-                    </label>
-                    <button class="button-form" type="submit" name="">Crear Cuenta</button>
+    <body>
+        <%- include("../partials/header", {searchBar: false}) %>
+        <main>
+            <div class="firstSection"></div>
+            <section class="Form">
+                <div class="container">
+                    <div class="titulo">
+                        <h1>¡Registrate!</h1>
+                    </div>
+                    <% if (locals.msg) {%> 
+                        <div class="info success">
+                            <p><%= msg %></p>
+                        </div>
+                    <% } %> 
+                    <% if (locals.errors) { %> 
+                        <div class="info errors">
+                            <p>Se encontraron los siguientes errores:</p>
+                            <ul>
+                                <% errors.forEach(error => { %>
+                                    <li> * <%= error.msg %></li>
+                                <% }) %>
+                            </ul>
+                        </div>
+                    <% } %> 
+                    <form action="/users" method="POST" class="inputsregister">
+                        <div class="inputsButton">
+                            <label>
+                                <input class="input-form" id="email" type="email" name="email"
+                                    placeholder="Tu Email" value="<%= locals.old && old.email  %> " required/>
+                            </label>
+                            <label>
+                                <input class="input-form" type="password" name="password" autocomplete="off"
+                                    placeholder="Tu nueva contraseña" required/>
+                            </label>
+                            <label>
+                                <input class="input-form" type="password" name="passwordConfirmation" autocomplete="off"
+                                    placeholder="Repite tu contraseña" required/>
+                            </label>
+                            <button class="button-hover button-form" type="submit" name="">Crear Cuenta</button>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-        <article>
-            <p>Ya tienes cuenta?
-                <a href="/login">
-                    Inicia Sesion
-                </a>
-            </p>
-        </article>
-    </section>
-    
-    <div class="secondSectionRegister">
-    </div>
+                <article>
+                    <p>¿Ya tienes cuenta?
+                        <a href="/login">
+                            Inicia Sesion
+                        </a>
+                    </p>
+                </article>
+            </section>
+            <div class="secondSectionRegister"></div>
+        </main>
+        <%- include("../partials/footer") %>
+    </body>
 
-</main>
-
-<%- include("../partials/footer") %>
-
-
-</body>
 </html>

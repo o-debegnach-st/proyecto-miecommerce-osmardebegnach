@@ -2,9 +2,6 @@ const fetch = require("node-fetch");
 const apiBaseURL = "https://dhfakestore.herokuapp.com/api";
 const BaseURL = " https://fakestoreapi.com/"
 
-
-let loggedIn = false;
-
 const getSuggestedProducts = async () => {
 	try {
 		let response = await fetch(`${apiBaseURL}/products/suggested`);
@@ -56,13 +53,9 @@ const root = (req, res) => {
 	Promise.all([getSuggestedProducts(), getMostwantedProducts()]).then((values) => {
 		let suggested = values[0]
 		let mostwanted = values[1]
-		if (req.query.email !== undefined) {
-			loggedIn = true;
-		}
 		res.render("pages/index", {
 			interes: suggested.slice(0, 5),
 			masVendidos: mostwanted.slice(0, 10),
-			loggedIn,
 		});
 	});
 };
@@ -72,13 +65,9 @@ const products = (req, res, next) => {
 	Promise.all([getAll(),getProductById(id)]).then((values) => {
 		let productId = values[1]
 		let all = values[0].filter(product=>productId.category===product.category)
-		if (req.query.email !== undefined) {
-			loggedIn = true;
-		}
 		res.render("pages/products", {
 			interes: all.slice(0, 5),
 			product:productId,
-			loggedIn,
 		});
 	});
 };
@@ -107,11 +96,11 @@ const productDetail =async (req,res)=>{
 }
 
 const cart = (req, res, next) => {
-	res.render("pages/cart", { loggedIn });
+	res.render("pages/cart");
 };
 
 const checkout = (req, res, next) => {
-	res.render("pages/checkout", { loggedIn: false });
+	res.render("pages/checkout");
 };
 
 module.exports = { root, products, suggestedProducts, mostwantedProducts, cart, checkout,getAllProducts, productDetail };
