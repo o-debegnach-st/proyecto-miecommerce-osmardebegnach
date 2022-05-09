@@ -1,0 +1,42 @@
+[
+	{
+		"user": 0,
+		"cart": [
+			{
+				"nombre": "Jack Daniel's Tennessee Honey Botella 750mL",
+				"cantidad": 1,
+				"puntos": "19.900",
+				"imagen": "/images/whisky.png"
+			},
+			{
+				"nombre": "1 Combo Hamburguesa",
+				"cantidad": 1,
+				"puntos": "5.000",
+				"imagen": "/images/hamburguesa.png"
+			},
+			{
+				"nombre": "Coca Cola Lata 220mL Pack Original x8",
+				"cantidad": 2,
+				"puntos": "1.520",
+				"imagen": "/images/cocacola.png"
+			}
+		]
+	},
+	{
+		"user": 1,
+		"cart": [
+			{
+				"nombre": "Jack Daniel's Tennessee Honey Botella 750mL",
+				"cantidad": 10,
+				"puntos": "19.900",
+				"imagen": "/images/whisky.png"
+			},
+			{
+				"nombre": "1 Combo Hamburguesa",
+				"cantidad": 5,
+				"puntos": "5.000",
+				"imagen": "/images/hamburguesa.png"
+			}
+		]
+	}
+]

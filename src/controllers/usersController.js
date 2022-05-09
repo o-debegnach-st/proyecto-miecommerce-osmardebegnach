@@ -62,6 +62,7 @@ const registerPost = (req, res) => {
         })
         fs.writeFileSync(path.resolve(__dirname,'../db/users.json'), JSON.stringify(users))
         req.app.locals.isLogged = true
+        req.app.locals.userLogged = users[users.length-1]
         res.render("pages/register", {
             msg: "La cuenta se creó correctamente."
         })

@@ -1,4 +1,6 @@
 const fetch = require("node-fetch");
+const fs = require('fs');
+const path = require("path");
 const apiBaseURL = "https://dhfakestore.herokuapp.com/api";
 const BaseURL = " https://fakestoreapi.com/"
 
@@ -95,8 +97,18 @@ const productDetail =async (req,res)=>{
 
 }
 
+const readCart = () => {
+	return JSON.parse(fs.readFileSync(path.resolve(__dirname, '../db/cart.json')))
+}
+
 const cart = (req, res, next) => {
-	res.render("pages/cart");
+	let carts = readCart();
+	let userCart = carts.find(x=> {
+		console.log(`x.user: ${x.user}, LoggedUserID: ${req.app.locals.userLogged?.id}`);
+		return x.user === req.app.locals.userLogged?.id
+	})
+	console.log(userCart);
+	res.render("pages/cart", {userCart});
 };
 
 const checkout = (req, res, next) => {
