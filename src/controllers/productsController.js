@@ -96,10 +96,7 @@ const productDetail =async (req,res)=>{
 }
 
 const cart = (req, res, next) => {
-	if (!req.app.locals.userLogged) {
-		res.redirect("/")
-	}
-	res.render("pages/cart");
+	(!req.app.locals.userLogged) ? res.redirect("/") : res.render("pages/cart");
 };
 
 const checkout = (req, res, next) => {

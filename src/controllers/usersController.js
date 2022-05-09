@@ -5,10 +5,12 @@ const { getUsers } = require("../utils/auxFuncs");
 
 
 const register = (req, res, next) => {
+    req.app.locals.userLogged = null
     res.render('pages/register')
 }
 
 const login = (req, res, next) => {
+    req.app.locals.userLogged = null
     res.render('pages/login')
 }
 
