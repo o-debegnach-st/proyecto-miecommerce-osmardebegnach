@@ -35,24 +35,24 @@
       </article>
     </section>
 
-    <main id="seccion-principal">
-      <section id="interes">
-        <h2 class="titulo">Te puede interesar</h2>
-        <div class="grid">
-          <% interes.forEach(producto => { %> <%-
-          include('../partials/productCard.ejs', {producto}) -%> <% }) %>
-        </div>
-      </section>
+<main id="seccion-principal">
+  <section id="interes">
+    <h2 class="titulo">Te puede interesar</h2>
+    <div class="grid">
+      <% interes.forEach(producto => { %> <%-
+      include('../partials/productCard.ejs', {producto}) -%> <% }) %>
+    </div>
+  </section>
 
-      <section id="mas-vendidos">
-        <h2 class="titulo">Mas vendidos</h2>
-        <div class="grid">
-          <% masVendidos.forEach(producto => { %> <%-
-          include('../partials/productCard.ejs', {producto}) -%> <% }) %>
-        </div>
-      </section>
-    </main>
-    <%- include('../partials/barraCategorias.ejs') %> 
-    <%- include("../partials/footer") %>
-    </body>
+  <section id="mas-vendidos">
+    <h2 class="titulo">Mas vendidos</h2>
+    <div class="grid">
+      <% masVendidos.forEach(producto => { %> <%-
+      include('../partials/productCard.ejs', {producto}) -%> <% }) %>
+    </div>
+  </section>
+</main>
+<%- include('../partials/barraCategorias.ejs') %>
+<%- include("../partials/footer") %>
+</body>
 </html>
