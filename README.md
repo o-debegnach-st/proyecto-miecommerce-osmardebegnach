@@ -4,14 +4,25 @@
 
 Estructura HTML con ejs como motor de plantilla, se usa CSS plano para estilos y express para manejar el servidor.
 
+**_ACTUALIZACION_**
+
+En esta version se agregan las dependendecias node-fetch para hacer llamados a una api externa y el express-validator para realizar validaciones.
+
 ## Estructura de carpetas
 
-en la raiz se encuentra el modulo app.js, dentro de la cual se importa express para levantar el servidor y se hace los request con diferentes end points. El packgage.json donde se instalan las dependencias, las carpeta views dividida en pages y partials. En assets esta los archivos css de cada pagina, dentro de la carpeta css y las imagenes usadas dentro de images.
+El modelo seguido para la estructuracion de las carpetas es el MVC (Model Views Controllers).
+En la raiz se encuentra el modulo app.js, dentro de la cual se importa express para levantar el servidor y se hace los request con diferentes end points. El packgage.json donde se instalan las dependencias, las carpeta views dividida en pages y partials. En assets esta los archivos css de cada pagina, dentro de la carpeta css y las imagenes usadas dentro de images.
+
+**_ACTUALIZACION_**
+
+En el root se creo la carpeta src, dentro la carpeta controllers, en la misma estan los archivos productsController.js y usersController.js , que contienen la logica de la aplicacion. Tambien en src se agregaron las carpetas middlewares con funciones de validacion, utils con funciones auxiliares y db donde se guardan en un json la informacion de los usuarios. 
 
 ## Tecnologias
  *  [ejs]: Version 3.1.7
  *  [express]: Version 4.18.0
  *  [nodemon]: Version 2.0.16 > actualiza automaticamente el servidor.
+ * [node-fetch]: Version 2.6.7
+ * [express-validator]: Version 6.14.0
 
 ## Instalacion 
     npm install 
@@ -24,7 +35,12 @@ El proyecto esta conformado por :
 2. Register.
 3. Index (pagina principal).
 4. Productos (detalle de cada producto). 
-5. cart (carrito de compra). 
+5. cart (carrito de compra).
+
+**_ACTUALIZACION_**
+
+6. Checkout.
+7. Error 404 page.
 
 ### Partials - Diseño atomico
 
