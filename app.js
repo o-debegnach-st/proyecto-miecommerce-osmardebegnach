@@ -1,11 +1,10 @@
-const express = require('express')
+const express = require('express');
 const app = express();
 const path = require('path');
 const indexRouter = require("./src/routes/index")
 const productsRouter = require("./src/routes/products")
 const cartRouter = require("./src/routes/cart")
 const checkoutRouter = require("./src/routes/checkout")
-
 app.set('port', process.env.port || 3000) 
 
 app.set('view engine', 'ejs');
