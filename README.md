@@ -4,7 +4,7 @@
 
 Estructura HTML con ejs como motor de plantilla, se usa CSS plano para estilos y express para manejar el servidor.
 
-**_ACTUALIZACION_**
+**_*ACTUALIZACION*_**
 
 En esta version se agregan las dependendecias node-fetch para hacer llamados a una api externa y el express-validator para realizar validaciones.
 
@@ -13,7 +13,7 @@ En esta version se agregan las dependendecias node-fetch para hacer llamados a u
 El modelo seguido para la estructuracion de las carpetas es el MVC (Model Views Controllers).
 En la raiz se encuentra el modulo app.js, dentro de la cual se importa express para levantar el servidor y se hace los request con diferentes end points. El packgage.json donde se instalan las dependencias, las carpeta views dividida en pages y partials. En assets esta los archivos css de cada pagina, dentro de la carpeta css y las imagenes usadas dentro de images.
 
-**_ACTUALIZACION_**
+**_*ACTUALIZACION*_**
 
 En el root se creo la carpeta src, dentro la carpeta controllers, en la misma estan los archivos productsController.js y usersController.js , que contienen la logica de la aplicacion. Tambien en src se agregaron las carpetas middlewares con funciones de validacion, utils con funciones auxiliares y db donde se guardan en un json la informacion de los usuarios. 
 
@@ -37,7 +37,7 @@ El proyecto esta conformado por :
 4. Productos (detalle de cada producto). 
 5. cart (carrito de compra).
 
-**_ACTUALIZACION_**
+**_*ACTUALIZACION*_**
 
 6. Checkout.
 7. Error 404 page.
@@ -53,4 +53,20 @@ Para elementos globales nos basamos en el diseño atomico. El mismo resuelve el 
 * header
 * productCard
 * userMenu
+
+### Rutas
+
+* /index
+* /products/id obtiene un producto por su ID
+* /cart pagina del carrito
+* /checkout pagina de pago
+* /register pagina de registro
+* /login pagina de login
+
+* /products  obtiene la lista de productos
+* /id/product-detail obtiene productos relacionados el id del producto ingresado
+* /products/mostwanted obtiene una lista de productos mas buscados
+* /products/suggested obtiene una lista de productos sugeridos 
+
+
 

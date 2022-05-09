@@ -1,22 +1,13 @@
-const express = require('express'),
-    cookieParser = require('cookie-parser');
+const express = require('express');
 const app = express();
 const path = require('path');
 const indexRouter = require("./src/routes/index")
 const productsRouter = require("./src/routes/products")
 const cartRouter = require("./src/routes/cart")
 const checkoutRouter = require("./src/routes/checkout")
-const session = require("express-session");
 const usersRouter = require("./src/routes/users")
 
-app.use(cookieParser());
 
-
-app.use(session({
-    secret : "Secrettt",
-    resave : false,
-    saveUninitialized:false,
-}));
 app.set('port', process.env.port || 3000) 
 
 app.set('view engine', 'ejs');
