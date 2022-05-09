@@ -38,7 +38,8 @@ const addProduct = (req, res) => {
 	let carts = readCart();
 	let userCart = carts.find((x) => x.user === userID);
 	if (!userCart) {
-		carts.push(createCart(userID));
+		userCart = createCart(userID)
+		carts.push(userCart);
 	}
 
 	let item = userCart.cart.find(x=>x.id === productoId);
