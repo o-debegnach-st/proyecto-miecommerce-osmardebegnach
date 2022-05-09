@@ -14,16 +14,26 @@
             <div class="titulo">
               <h1>¡Hola!</h1>
             </div>
-            <form action="/" method="GET" class="inputs">
+            <form action="/login" method="POST" class="inputs">
               <div class="inputsButton">
                 <label>
-                  <input class="input-form" id="email" type="email" name="email" placeholder="Tu nombre de usuario" />
+                  <input class="input-form" id="email" type="email" name="email"  placeholder="Tu nombre de usuario" />
                 </label>
+                <% if(locals.errors && errors.email) { %>
+                  <p class="error-msg">
+                    <%=errors.email.msg %>
+                  </p>
+                <% } %>
                 <label>
                   <input class="input-form" id="password" type="password" autocomplete="off" name="password"
                     placeholder="Tu contraseña" />
+                  <% if(locals.errors && errors.password) { %>
+                    <p class="error-msg">
+                      <%= errors.password.msg %>
+                    </p>
+                  <% } %>
                 </label>
-                <button class="button-form" type="submit" name="">Iniciar Sesión</button>
+                <button class="button-form" type="submit">Iniciar Sesión</button>
               </div>
             </form>
           </div>
