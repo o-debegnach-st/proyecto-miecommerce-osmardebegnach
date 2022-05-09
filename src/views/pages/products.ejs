@@ -4,7 +4,7 @@
 
   <body>
     <%- include("../partials/header", {loggedIn, searchBar: true}) %>
-    <main class="bodyContainer">
+    <main class="bodyContainer" id="seccion-principal">
         <nav class="menuNav">
           <a href="/" class="backButton">
             <img class="flechaIzquierda" src="/images/Vector.png" alt="flecha">
@@ -33,13 +33,15 @@
             </p>
           </div>
         </section>
-        <p class="tituloDos">Tambien te puede interesar</p>
-        <article class="cardsProductos">
-          <div class="cardProductContainer">
+    
+        <section id="interes">
+          <h2 class="titulo">Te puede interesar</h2>
+          <div class="grid">
             <% interes.forEach(producto => { %> <%-
-              include('../partials/productCard.ejs', {producto}) -%> <% }) %>
+            include('../partials/productCard.ejs', {producto}) -%> <% }) %>
           </div>
-        </article>
+        </section>
+        <
       </main>
       <%- include('../partials/barraCategorias.ejs') %>
 

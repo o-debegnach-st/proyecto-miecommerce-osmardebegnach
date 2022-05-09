@@ -1,0 +1,7 @@
+<section id="interes">
+    <h2 class="titulo">Te puede interesar</h2>
+    <div class="grid">
+      <% interes.forEach(producto => { %> <%-
+      include('../partials/productCard.ejs', {producto}) -%> <% }) %>
+    </div>
+  </section>
