@@ -17,30 +17,21 @@ let generico = {
 let interes = [whiskey, generico, generico, generico]
 let masVendidos = [coca, generico, generico, generico, generico, generico, generico, generico]
 const productos = [coca, generico, generico, generico]
-let loggedIn = false;
 
-const root = (req, res, next) =>{
-    if(req.query.email !== undefined){
-        loggedIn = true
-    }
-    res.render('pages/index', {
-        interes, masVendidos, loggedIn
-    });
+const root = (req, res, next) => {
+    res.render('pages/index', {interes, masVendidos});
 }
 
 const products = (req, res, next) => {
-    res.render('pages/products',{
-        products:productos,
-        loggedIn
-    });
+    res.render('pages/products',{products: productos});
 }
 
 const cart = (req, res, next) => {
-    res.render('pages/cart', {loggedIn})
+    res.render('pages/cart')
 }
 
-const checkout = (req, res, next) =>{
-    res.render('pages/checkout', {loggedIn: false})
+const checkout = (req, res, next) => {
+    res.render('pages/checkout')
 }
 
 module.exports = {root, products, cart, checkout}

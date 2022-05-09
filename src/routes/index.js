@@ -21,7 +21,6 @@ let generico = {
 let interes = [whiskey, generico, generico, generico]
 let masVendidos = [coca, generico, generico, generico, generico, generico, generico, generico]
 const products = [coca, generico, generico, generico]
-let loggedIn = false;
 
 
 router.get('/', root)

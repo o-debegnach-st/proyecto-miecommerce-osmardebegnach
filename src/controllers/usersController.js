@@ -1,23 +1,29 @@
 const fs = require('fs');
-const {validationResult} = require('express-validator');
+const { validationResult, body } = require('express-validator');
 const path = require('path');
+const { getUsers } = require("../utils/auxFuncs");
+const { localsName } = require('ejs');
+
 
 const register = (req, res, next) => {
-    res.render('pages/register', {loggedIn: false})
+    res.render('pages/register')
 }
 
 const login = (req, res, next) => {
-    res.render('pages/login', {loggedIn: false})
+    res.render('pages/login')
 }
-
-const getUsers = () => JSON.parse(fs.readFileSync(path.resolve(__dirname,'../db/users.json'), "utf-8"))
 
 const registerPost = (req, res) => {
     const errors = validationResult(req)
     const users = getUsers()
     if (errors.isEmpty()) {
-        users.push(req.body)
+        users.push({
+            "email": req.body.email,
+            "password": req.body.password,
+            "id": users.length,
+        })
         fs.writeFileSync(path.resolve(__dirname,'../db/users.json'), JSON.stringify(users))
+        req.app.locals.isLogged = true
         res.render("pages/register", {
             msg: "La cuenta se creó correctamente."
         })
@@ -29,4 +35,24 @@ const registerPost = (req, res) => {
     }
 }
 
-module.exports = { register, login, registerPost, getUsers }
+const validarUser = [ 
+    body('email')
+    .isEmail().withMessage("Se debe ingresar un email válido.")
+    .custom(value => {
+        getUsers().forEach(user => {
+            if (value === user.email) throw new Error
+        })
+        return true
+    }).withMessage("El e-mail ya se encuentra registrado con otra cuenta.")
+    .trim(),
+    body('password')
+    .isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres.")
+    .trim(),
+    body('passwordConfirmation').custom((value, { req }) => {
+        if (value !== req.body.password) throw new Error
+        return true
+    }).withMessage("Las contraseñas deben coincidir.")
+]
+
+
+module.exports = { register, login, registerPost, validarUser}
