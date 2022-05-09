@@ -17,6 +17,10 @@ app.use("/products", productsRouter)
 app.use("/cart", cartRouter)
 app.use("/checkout", checkoutRouter)
 
+app.use((req, res) => {
+    res.render('pages/notFound')
+})
+
 app.listen(app.get('port'), server =>{
-    console.info(`Server listen on port ${app.get('port')}`);
+    console.log(`Server listen on port ${app.get('port')}`);
 })

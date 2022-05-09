@@ -42,11 +42,17 @@ article.card-producto {
 
 article.card-producto a{
   text-decoration: none;
+  height: 100%;
   color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 article.card-producto img {
   width: 100%;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 article.card-producto .contenido {
