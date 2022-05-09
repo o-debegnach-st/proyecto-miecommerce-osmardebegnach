@@ -20,7 +20,7 @@
             <li><img src="/images/Rectangle 18.png" alt="img2"></li>
             <li><img src="/images/Rectangle 19.png" alt="img3"></li>
           </ul>
-          <img src="<%=product.image%> " alt="img4">
+          <img class="imagenProducto" src="<%=product.image%> " alt="img4">
           <div class="infoContainer">
             <p class="nombreProducto"><%=product.title%></p>
             <div class="puntajeContainer">
@@ -35,7 +35,7 @@
                 <input type="text" value="<%= product.price %>" name="puntos">
                 <input type="text" value="<%= product.image %>" name="imagen">
               </div>
-              <button class="agregarCarrito">Agregar al carrito</button>
+              <button class="agregarCarrito button-hover">Agregar al carrito</button>
             </form>
             <p class="descripcionProducto">
               <%=product.description %> 

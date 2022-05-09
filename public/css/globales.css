@@ -62,8 +62,10 @@ article.card-producto a{
 
 article.card-producto img {
   width: 100%;
+  height: 250px;
   margin-top: auto;
   margin-bottom: auto;
+  object-fit: cover;
 }
 
 article.card-producto .contenido {

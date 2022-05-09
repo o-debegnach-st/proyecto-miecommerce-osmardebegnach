@@ -112,7 +112,6 @@ const cart = (req, res, next) => {
 		res.redirect("/");
 	} else {
 		getUserCart(req.app.locals.userLogged.id).then((userCart) => {
-			console.log(userCart);
 			res.render("pages/cart", { productos: userCart.cart });
 		});
 	}

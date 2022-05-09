@@ -41,6 +41,13 @@ h2 {
     font-size: 18px;
     gap: 8px;
 }
+
+.cart-product-img {
+    height: 64px;
+    width: 64px;
+    object-fit: cover;
+}
+
 .cart-product-info-right {
     display: flex;
     align-items: center;
