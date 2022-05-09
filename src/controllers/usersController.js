@@ -2,7 +2,6 @@ const fs = require('fs');
 const { validationResult, body } = require('express-validator');
 const path = require('path');
 const { getUsers } = require("../utils/auxFuncs");
-const { localsName } = require('ejs');
 
 
 const register = (req, res, next) => {
@@ -17,13 +16,15 @@ const registerPost = (req, res) => {
     const errors = validationResult(req)
     const users = getUsers()
     if (errors.isEmpty()) {
+        const id = users.length + 1
+        req.app.locals.isLogged = id
         users.push({
             "email": req.body.email,
             "password": req.body.password,
-            "id": users.length,
+            "id": id,
+            "cart": []
         })
         fs.writeFileSync(path.resolve(__dirname,'../db/users.json'), JSON.stringify(users))
-        req.app.locals.isLogged = true
         res.render("pages/register", {
             msg: "La cuenta se creó correctamente."
         })
