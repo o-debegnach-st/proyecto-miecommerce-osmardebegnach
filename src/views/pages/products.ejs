@@ -29,13 +29,13 @@
             </div>
             <form action="/api/cart" method="post">
               <div class="hidden">
-                <input type="text" value="<%= locals.userLogged.id %>" name="userID">
                 <input type="text" value="<%= product.title %>" name="nombre">
                 <input type="text" value="1" name="cantidad">
                 <input type="text" value="<%= product.price %>" name="puntos">
                 <input type="text" value="<%= product.image %>" name="imagen">
+                <input type="text" value="<%= product._id %>" name="productoId">
               </div>
-              <button class="agregarCarrito button-hover">Agregar al carrito</button>
+              <button class="agregarCarrito button-hover" <%= !locals.userLogged ? 'disabled' : '' %> >Agregar al carrito</button>
             </form>
             <p class="descripcionProducto">
               <%=product.description %> 

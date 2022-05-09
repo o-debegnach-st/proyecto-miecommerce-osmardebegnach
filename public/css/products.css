@@ -77,6 +77,10 @@
     margin-left: 10px;
 }
 
+.agregarCarrito:disabled{
+    background-color: #6c6d6d!important;
+    cursor: auto;
+}
 .agregarCarrito{
     width: 80%;
     height:36px;

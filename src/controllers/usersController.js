@@ -53,8 +53,7 @@ const registerPost = (req, res) => {
         const newUser = {
             "email": req.body.email,
             "password": req.body.password,
-            "id": users.length + 1,
-            "cart": []
+            "id": users.length + 1
         }
         req.app.locals.userLogged = newUser
         users.push(newUser)
