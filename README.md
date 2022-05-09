@@ -56,17 +56,17 @@ Para elementos globales nos basamos en el diseño atomico. El mismo resuelve el 
 
 ### Rutas
 
-* /index
-* /products/id obtiene un producto por su ID
-* /cart pagina del carrito
-* /checkout pagina de pago
-* /register pagina de registro
-* /login pagina de login
+* / --- pagina de inicio
+* /products/id --- obtiene un producto por su ID
+* /cart --- pagina del carrito
+* /checkout --- pagina de pago
+* /register --- pagina de registro
+* /login --- pagina de login
 
-* /products  obtiene la lista de productos
-* /id/product-detail obtiene productos relacionados el id del producto ingresado
-* /products/mostwanted obtiene una lista de productos mas buscados
-* /products/suggested obtiene una lista de productos sugeridos 
+* /products --- obtiene la lista de productos
+* /id/product-detail --- obtiene productos relacionados el id del producto ingresado
+* /products/mostwanted --- obtiene una lista de productos mas buscados
+* /products/suggested --- obtiene una lista de productos sugeridos 
 
 
 
