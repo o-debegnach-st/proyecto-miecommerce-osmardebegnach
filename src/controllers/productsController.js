@@ -108,6 +108,9 @@ const cart = (req, res, next) => {
 		return x.user === req.app.locals.userLogged?.id
 	})
 	console.log(userCart);
+	if (!req.app.locals.userLogged) {
+		res.redirect("/")
+	}
 	res.render("pages/cart", {userCart});
 };
 

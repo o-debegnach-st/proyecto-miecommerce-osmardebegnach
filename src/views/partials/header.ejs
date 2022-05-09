@@ -5,7 +5,7 @@
     <% if (searchBar) { %>
         <input role="search" class="search-bar" type="text" placeholder="Buscar productos...">
     <% } %>
-    <% if (locals.isLogged) { %>
+    <% if (locals.userLogged) { %>
         <nav class="header-nav">
             <a href="/cart" class="button-hover header-icon header-shopping-cart">
                 <i class="fa-solid fa-cart-shopping "></i>

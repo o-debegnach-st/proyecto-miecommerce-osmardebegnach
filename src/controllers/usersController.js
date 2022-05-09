@@ -12,32 +12,26 @@ const login = (req, res, next) => {
     res.render('pages/login')
 }
 
-
-
 const loginProcess = (req,res,next) => {
-
     const resultValidation = validationResult(req);
-
     if (resultValidation.errors.length > 0) {
-        return res.render("pages/login",{loggedIn:false})
-        }
+        return res.render("pages/login")
+    }
 
     let userDb = getUsers().find(user => user.email === req.body.email)
 
-    console.log(userDb)
-    if (userDb !== undefined) {
+    if (userDb) {
         if (req.body.password === userDb.password) {
+            req.app.locals.userLogged = userDb
             res.redirect('/')
 
         } else
-            res.render('pages/login', {loggedIn: false,
+            res.render('pages/login', {
                 errors: {
                     password: {
-                        msg: 'Contrasenia incorrecta.'
+                        msg: 'Contraseña incorrecta.'
                     }
             }})
-
-
     } else
         res.render('pages/login', {
             loggedIn: false,
@@ -47,7 +41,6 @@ const loginProcess = (req,res,next) => {
                 }
             }
         })
-
 }
 
 
@@ -55,43 +48,22 @@ const registerPost = (req, res) => {
     const errors = validationResult(req)
     const users = getUsers()
     if (errors.isEmpty()) {
-        users.push({
+        const newUser = {
             "email": req.body.email,
             "password": req.body.password,
-            "id": users.length,
-        })
+            "id": users.length + 1,
+            "cart": []
+        }
+        req.app.locals.userLogged = newUser
+        users.push(newUser)
         fs.writeFileSync(path.resolve(__dirname,'../db/users.json'), JSON.stringify(users))
-        req.app.locals.isLogged = true
-        req.app.locals.userLogged = users[users.length-1]
-        res.render("pages/register", {
-            msg: "La cuenta se creó correctamente."
-        })
+        res.redirect("/")
     } else {
-        res.render('pages/register',{
+        res.render('pages/register', {
             errors: errors.errors,
             old: req.body,
         })
     }
 }
 
-const validarUser = [ 
-    body('email')
-    .isEmail().withMessage("Se debe ingresar un email válido.")
-    .custom(value => {
-        getUsers().forEach(user => {
-            if (value === user.email) throw new Error
-        })
-        return true
-    }).withMessage("El e-mail ya se encuentra registrado con otra cuenta.")
-    .trim(),
-    body('password')
-    .isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres.")
-    .trim(),
-    body('passwordConfirmation').custom((value, { req }) => {
-        if (value !== req.body.password) throw new Error
-        return true
-    }).withMessage("Las contraseñas deben coincidir.")
-]
-
-
-module.exports = { register, login, registerPost, validarUser, register, login, loginProcess}
+module.exports = { register, login, registerPost, register, login, loginProcess}

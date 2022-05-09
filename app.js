@@ -1,22 +1,11 @@
-const express = require('express'),
-    cookieParser = require('cookie-parser');
+const express = require('express')
 const app = express();
 const path = require('path');
 const indexRouter = require("./src/routes/index")
 const productsRouter = require("./src/routes/products")
 const cartRouter = require("./src/routes/cart")
 const checkoutRouter = require("./src/routes/checkout")
-const session = require("express-session");
-const usersRouter = require("./src/routes/users")
 
-app.use(cookieParser());
-
-
-app.use(session({
-    secret : "Secrettt",
-    resave : false,
-    saveUninitialized:false,
-}));
 app.set('port', process.env.port || 3000) 
 
 app.set('view engine', 'ejs');
@@ -25,13 +14,12 @@ app.use(express.static(path.resolve(__dirname,'./public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 
-app.locals.isLogged = false
+app.locals.userLogged = null
 
 app.use("/", indexRouter)
 app.use("/products", productsRouter)
 app.use("/cart", cartRouter)
 app.use("/checkout", checkoutRouter)
-app.use("/users", usersRouter)
 
 app.use((req, res) => {
     res.render('pages/notFound')
