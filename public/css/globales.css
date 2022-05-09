@@ -31,6 +31,10 @@ body {
   padding-top: 85px !important;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Inicio estilo carta de producto */
 article.card-producto {
   background-color: var(--blanco);

@@ -27,7 +27,16 @@
               <h3><%=product.price%> </h3>
               <p class="puntos">PUNTOS</p>
             </div>
-            <button class="agregarCarrito">Agregar al carrito</button>
+            <form action="/api/cart" method="post">
+              <div class="hidden">
+                <input type="text" value="<%= locals.userLogged.id %>" name="userID">
+                <input type="text" value="<%= product.title %>" name="nombre">
+                <input type="text" value="1" name="cantidad">
+                <input type="text" value="<%= product.price %>" name="puntos">
+                <input type="text" value="<%= product.image %>" name="imagen">
+              </div>
+              <button class="agregarCarrito">Agregar al carrito</button>
+            </form>
             <p class="descripcionProducto">
               <%=product.description %> 
             </p>

@@ -5,6 +5,7 @@ const indexRouter = require("./src/routes/index")
 const productsRouter = require("./src/routes/products")
 const cartRouter = require("./src/routes/cart")
 const checkoutRouter = require("./src/routes/checkout")
+const apiRouter = require('./src/routes/api')
 
 app.set('port', process.env.port || 3000) 
 
@@ -17,6 +18,7 @@ app.use(express.urlencoded({ extended: false }))
 app.locals.userLogged = null
 
 app.use("/", indexRouter)
+app.use("/api", apiRouter)
 app.use("/products", productsRouter)
 app.use("/cart", cartRouter)
 app.use("/checkout", checkoutRouter)

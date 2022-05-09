@@ -10,24 +10,9 @@
             </a>
             <h2>Productos en tu Carrito</h2>
             <section class="cart-products">
-                <%- include("../partials/cartProduct", {
-                    nombre: "Jack Daniel's Tennessee Honey Botella 750mL",
-                    cantidad: 1,
-                    puntos: "19.900",
-                    imagen: "/images/whisky.png"
-                }) %>
-                <%- include("../partials/cartProduct", {
-                    nombre: "1 Combo Hamburguesa",
-                    cantidad: 1,
-                    puntos: "5.000",
-                    imagen: "/images/hamburguesa.png"
-                }) %>
-                <%- include("../partials/cartProduct", {
-                    nombre: "Coca Cola Lata 220mL Pack Original x8",
-                    cantidad: 2,
-                    puntos: "1.520",
-                    imagen: "/images/cocacola.png"
-                }) %>
+                <% productos.forEach(producto => { %>
+                    <%- include("../partials/cartProduct", {producto}) %>
+                <% }) %>
             </section>
             <section class="cart-checkout">
                 <div class="cart-checkout-total">
