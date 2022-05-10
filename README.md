@@ -35,7 +35,7 @@ El proyecto esta conformado por :
 2. Register.
 3. Index (pagina principal).
 4. Productos (detalle de cada producto). 
-5. cart (carrito de compra).
+5. Cart (carrito de compra).
 
 **_*ACTUALIZACION*_**
 

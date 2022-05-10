@@ -4,7 +4,12 @@
         <p><%= producto.nombre %></p>
     </div>
     <div class="cart-product-info-right">
-        <a href="#" class="cart-button">Quitar</a>
+        <form method="DELETE" action="/api/cart/<%=locals.userLogged.id%>">
+            <div class="hidden">
+                <input type="text" value="<%= producto.id%>" name="id">
+            </div>
+            <button class="cart-button">Quitar</a>
+        </form>
         <div class="number-input">
             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="input-number-left" 
             aria-label="Restar 1 producto">
