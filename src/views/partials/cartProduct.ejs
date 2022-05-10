@@ -4,7 +4,7 @@
         <p><%= producto.nombre %></p>
     </div>
     <div class="cart-product-info-right">
-        <form method="DELETE" action="/api/cart/<%=locals.userLogged.id%>">
+        <form method="POST" action="/api/cart/<%=locals.userLogged.id%>">
             <div class="hidden">
                 <input type="text" value="<%= producto.id%>" name="id">
             </div>

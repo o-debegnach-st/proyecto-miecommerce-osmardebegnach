@@ -63,18 +63,17 @@ const addProduct = (req, res) => {
 };
 
 const deleteCart = (req,res) =>{
-	let {id} = req.query;
-	console.log(id)
+	let {id} = req.body;
 	let userID = req.app.locals.userLogged.id;
 	let carts = readCart();
 	let userCart = carts.find((x) => x.user === userID);
 	let editedCart = userCart.cart.filter((item)=>item.id!==id)
-	carts[userID].cart= editedCart;
+	userCart.cart= editedCart;
 	fs.writeFileSync(
 		path.resolve(__dirname, "../db/cart.json"),
 		JSON.stringify(carts)
 	);
-	res.send('hola')
+	res.redirect("/cart")
 }
 
 module.exports = {
