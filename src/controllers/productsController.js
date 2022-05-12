@@ -2,7 +2,6 @@ const fetch = require("node-fetch");
 const fs = require("fs");
 const path = require("path");
 const apiBaseURL = "https://dhfakestore.herokuapp.com/api";
-const BaseURL = " https://fakestoreapi.com/";
 
 const getSuggestedProducts = async () => {
 	try {
@@ -107,11 +106,21 @@ const getUserCart = async (userID) => {
 	}
 };
 
+const updateCartNotification = (req, res, next) => {
+	if (req.app.locals.userLogged) {
+		getUserCart(req.app.locals.userLogged.id).then((userCart) => {
+			req.app.locals.cartNotification = userCart?.cart.length | 0;
+		});
+	}
+	next();
+};
+
 const cart = (req, res, next) => {
 	if (!req.app.locals.userLogged) {
 		res.redirect("/");
 	} else {
 		getUserCart(req.app.locals.userLogged.id).then((userCart) => {
+			req.app.locals.cartNotification = userCart?.cart.length | 0;
 			res.render("pages/cart", { productos: userCart.cart });
 		});
 	}
@@ -130,4 +139,5 @@ module.exports = {
 	checkout,
 	getAllProducts,
 	productDetail,
+	updateCartNotification,
 };

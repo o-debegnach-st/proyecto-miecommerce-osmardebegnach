@@ -9,7 +9,9 @@
         <nav class="header-nav">
             <a href="/cart" class="button-hover header-icon header-shopping-cart">
                 <i class="fa-solid fa-cart-shopping "></i>
-                <div class="header-shopping-cart-number">2</div>
+                <% if (locals.cartNotification > 0) { %>
+                    <div class="header-shopping-cart-number"><%= locals.cartNotification  %> </div>
+                <% } %>
             </a>
             <button class="button-hover header-icon header-user-card" 
             onclick="document.getElementById('userMenu').classList.toggle('hidden')">

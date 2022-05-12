@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: false }))
 
 app.locals.userLogged = null
 
+
 app.use("/", indexRouter)
 app.use("/api", apiRouter)
 app.use("/products", productsRouter)

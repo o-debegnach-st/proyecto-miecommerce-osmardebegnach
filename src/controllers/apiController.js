@@ -11,25 +11,30 @@ const allCarts = (req, res) => {
 	res.json(readCart());
 };
 
-const userCart = (req, res) => {
-	let carts = readCart();
-	let userCart = carts.find((x) => x.user === +req.params.userID);
+const createCart = (userID) => {
+	return {
+		user: userID,
+		cart: [],
+	};
+};
+
+const getUserCart = (userID, carts) => {
+	let userCart = carts.find((x) => x.user === userID);
 	if (!userCart) {
-		userCart = createCart(req.app.locals.userLogged.id);
+		userCart = createCart(userID);
 		carts.push(userCart);
 		fs.writeFileSync(
 			path.resolve(__dirname, "../db/cart.json"),
 			JSON.stringify(carts)
 		);
 	}
-	res.json(userCart);
+	return userCart;
 };
 
-const createCart = (userID) => {
-	return {
-		user: userID,
-		cart: [],
-	};
+const userCart = (req, res) => {
+	let carts = readCart();
+	let userCart = getUserCart(+req.params.userID, carts);
+	res.json(userCart);
 };
 
 const addProduct = (req, res) => {
@@ -38,22 +43,22 @@ const addProduct = (req, res) => {
 	let carts = readCart();
 	let userCart = carts.find((x) => x.user === userID);
 	if (!userCart) {
-		userCart = createCart(userID)
+		userCart = createCart(userID);
 		carts.push(userCart);
 	}
 
-	let item = userCart.cart.find(x=>x.id === productoId);
-	if(item){
-		item.cantidad++
-	}
-	else{
+	let item = userCart.cart.find((x) => x.id === productoId);
+	if (item) {
+		item.cantidad++;
+	} else {
 		userCart.cart.push({
 			nombre,
 			cantidad: Number(cantidad),
 			puntos: Number(puntos),
 			imagen,
-			id: productoId
+			id: productoId,
 		});
+		req.app.locals.cartNotification = userCart?.cart.length | 0;
 	}
 	fs.writeFileSync(
 		path.resolve(__dirname, "../db/cart.json"),
