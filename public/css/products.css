@@ -210,3 +210,30 @@
     background-repeat: no-repeat;
     background-color: white;
 }
+
+@media screen and (max-width: 768px) {
+    .cardContainer{
+        flex-direction: column;
+    }
+
+    .infoContainer{
+        width: auto;
+        border: none;
+    }
+
+    .infoContainer form {
+        order: 4;
+    }
+    .img-container{
+        order: -1;
+        height: 50vh;
+    }
+
+    #gallery {
+        flex-direction: row;
+        overflow-x: scroll;
+    }
+
+
+
+}
