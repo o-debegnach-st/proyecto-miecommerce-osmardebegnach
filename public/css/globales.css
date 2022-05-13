@@ -65,8 +65,15 @@ article.card-producto img {
   height: 250px;
   margin-top: auto;
   margin-bottom: auto;
-  object-fit: cover;
 }
+
+@supports(object-fit: contain){
+  article.card-producto img{
+      object-fit: contain;
+      object-position: center center;
+    }
+}
+
 
 article.card-producto .contenido {
   display: flex;
