@@ -125,6 +125,7 @@ header {
     overflow: hidden;
     /* opacity: 0; */
     transition: height .5s;
+    z-index:4;
     /* transition: opacity .4s; */
 }
 
@@ -202,6 +203,21 @@ header {
     height:220px
 }
 
+#fondoBlur {
+    position : absolute ;
+    top: 0;
+    right:0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    opacity: 0;
+    background-color: black;
+}
+
+.hidden {
+    display:none;
+}
+
 @media only screen and (max-width:768px) {
     .menuContainer {
         top:0;
@@ -216,5 +232,8 @@ header {
     }
     .open {        
         right : 0px;
+    }
+    #fondoBlur {
+        opacity: .4;
     }
 }
