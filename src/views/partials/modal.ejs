@@ -1,4 +1,6 @@
-<div class="modal-container hidden">
+<div class="modal-container <% if (!isOpen) { %>
+ hidden
+<% } %>">
   <div class="modal">
     <h4 class="title"><%- title %> </h4>
     <p class="para"> <%- body %> </p>

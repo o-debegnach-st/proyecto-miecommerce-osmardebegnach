@@ -2,19 +2,20 @@
 
 ## Parametros {#parametros}
 
-- title: **String**. Indica el titulo de la ventada modal. Acepta texto enriquecido 
-- body: **String**. Indica el cuerpo de la ventada modal. Acepta texto enriquecido
-- hasSecondaryButton: **Boolean**. Indica si la ventana modal posee o no un boton secundario
-- primaryAction: **String**. Indica la accion del boton primario
+- title: `String` Indica el titulo de la ventada modal. Acepta texto enriquecido 
+- body: `String` Indica el cuerpo de la ventada modal. Acepta texto enriquecido
+- hasSecondaryButton: `Boolean` Indica si la ventana modal posee o no un boton secundario
+- primaryAction: `String` Indica la accion del boton primario
   Posibles valores:
   - close: Cierra la ventana modal y fija como resultado 'closed'
   - submit: Cierra la ventana modal y fija como resultado 'submited'
   - cancel: Cierra la ventana modal y fija como resultado 'canceled'
-- secondaryAction: **String**. Indica la accion del boton secundario
+- secondaryAction: `String` Indica la accion del boton secundario
   Posibles valores:
   - close: Cierra la ventana modal y fija como resultado 'closed'
   - submit: Cierra la ventana modal y fija como resultado 'submited'
   - cancel: Cierra la ventana modal y fija como resultado 'canceled'
+- isOpen: `Boolean` Indica si la modal comienza abierta o cerrada
 
 
 ## Resultado
