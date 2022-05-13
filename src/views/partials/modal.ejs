@@ -1,0 +1,14 @@
+<div class="modal-container hidden">
+  <div class="modal">
+    <h4 class="title"><%- title %> </h4>
+    <p class="para"> <%- body %> </p>
+    <div class="btn-container">
+      <% if (hasSecondaryButton) { %>
+        <button id="secondaryButton" class="button-hover" data-action=<%= secondaryAction %> > Cancelar </button>
+      <% } %>
+      <button id="primaryButton" class="button-hover primary" data-action=<%= primaryAction %>> Aceptar </button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/modal.js"></script>
