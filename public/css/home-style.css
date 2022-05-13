@@ -7,7 +7,7 @@ section.hero-products-container {
   justify-content: space-between;
   background-color: var(--verde);
   gap: 16px;
-  margin-top: 80px;
+  margin: 80px 0;
   padding: 0 10%;
   overflow: visible;
 }
@@ -70,4 +70,21 @@ main#seccion-principal section .grid {
   margin-top: 24px;
 }
 
+.titulo {
+  font-weight: 400;
+}
+
 /* Fin seccion de principal */
+
+@media screen and (max-width: 768px) {
+  section.hero-products-container {
+    padding: 0 5%;
+    margin: 80px 0 0 0;
+  }
+  article.hero-product {
+    height: 200px;
+  }
+  main#seccion-principal {
+    margin: 24px 5%;
+  }
+}
