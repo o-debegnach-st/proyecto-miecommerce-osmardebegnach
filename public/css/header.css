@@ -112,7 +112,7 @@ header {
     top: 70px;
     right: 15px;
     width: 206px;
-    height: 220px;
+    height: 0px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
     background-color: white;
@@ -122,10 +122,15 @@ header {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
+    overflow: hidden;
+    /* opacity: 0; */
+    transition: height .5s;
+    /* transition: opacity .4s; */
 }
 
 .menuContainer a:hover div {
     background-color: rgba(0, 0, 0, 0.15);
+    
 }
 
 .menuContainer a {
@@ -187,6 +192,29 @@ header {
     margin-left: 12px;
 }
 
-.hidden {
-    display: none;
+/* .open:hover ~ .menuContainer, .menuContainer:hover {
+    
+    height:220px;
+    
+}  */
+
+.open {
+    height:220px
+}
+
+@media only screen and (max-width:768px) {
+    .menuContainer {
+        top:0;
+        height: 100vh;
+        width: 60%;
+        border: 10% 0 0 10%;
+        padding: 20px;
+        position: absolute;
+        right: -850px;
+        transition: right .9s ;
+
+    }
+    .open {        
+        right : 0px;
+    }
 }

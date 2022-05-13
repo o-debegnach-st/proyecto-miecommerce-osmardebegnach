@@ -13,8 +13,8 @@
                     <div class="header-shopping-cart-number"><%= locals.cartNotification  %> </div>
                 <% } %>
             </a>
-            <button class="button-hover header-icon header-user-card" 
-            onclick="document.getElementById('userMenu').classList.toggle('hidden')">
+            <button class="button-hover header-icon header-user-card " >
+           <!--  onclick="document.getElementById('userMenu').classList.toggle('hidden')" -->
                 <img src="/images/Ellipse 1.svg" alt="Foto de usuario">
                 <span><%= locals.userLogged.email.split("@")[0] %></span>
             </button>
