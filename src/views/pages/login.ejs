@@ -12,9 +12,12 @@
             <div class="titulo">
               <h1>¡Hola!</h1>
             </div>
+
+
+
             <form action="/login" method="POST" class="inputs">
               <div class="inputsButton">
-                
+
                 <% if(locals.errors && errors.email) { %>
                   <p class="error-msg">
                     <%=errors.email.msg %>
@@ -32,7 +35,7 @@
                   <input class="input-form" id="password" type="password" autocomplete="off" name="password"
                     placeholder="Tu contraseña" />
                 </label>
-                <button class="button-hover button-form" type="submit" name="">Iniciar Sesión</button>
+                <button disabled class="button-form boton" type="submit" name="">Iniciar Sesión</button>
               </div>
             </form>
           </div>
@@ -51,5 +54,38 @@
       <%- include("../partials/footer") %>
 
   </body>
+
+<script>
+  window.addEventListener("load",function() {
+    const passwordElement = document.querySelector('#password');
+    let formulario = document.querySelector('form.inputs')
+    const button = document.querySelector('.boton')
+    let email = document.querySelector('#email');
+
+    function isEmpty() {
+      let flag = false;
+      if (email.value === '') {
+        flag = true;
+      }
+      if (passwordElement.value === '') {
+        flag = true;
+      }
+
+
+      if (flag === true) {
+        button.disabled = true;
+        button.style.backgroundColor = 'grey'
+      } else {
+        button.disabled = false;
+        button.style.backgroundColor = 'rgba(12, 176, 147, 1)'
+      }
+    }
+
+    formulario.addEventListener("keyup", isEmpty)
+
+  })
+
+
+</script>
 
 </html>
