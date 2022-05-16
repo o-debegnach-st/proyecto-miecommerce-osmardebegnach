@@ -1,3 +1,5 @@
+@import url("./globales.css"); 
+
 main{
     height: calc(100vh - 170px);
     display: flex;
@@ -12,7 +14,7 @@ main{
     right: 0;
     height:35vh;
     width:100vw;
-    background-color: rgba(12, 176, 147, 1);
+    background-color: var(--verde);
     border-top-color: black;
 }
 
@@ -26,6 +28,10 @@ main{
     padding-top: 15px;
 }
 
+.cuenta {
+    color:var(--font-color);
+}
+
 .Form article p a  {
     text-decoration: underline;
 }
@@ -36,7 +42,7 @@ main{
     padding-top: 50px;
     padding-bottom: 50px;
     border-radius: 16px;
-    background-color: white;
+    background-color: var(--secondary-color);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     min-width: 300px;
     width: 80vw;
@@ -45,6 +51,7 @@ main{
 
 .titulo{
     margin-bottom: 30px;
+    color: var(--font-color);
 }
 
 .titulo h1{
@@ -61,6 +68,7 @@ main{
     display: block;
     margin-bottom: 18px;
     border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: var(--secondary-color);
 }
 .input-form::placeholder {
     color: rgba(153, 153, 153, 1);
@@ -82,7 +90,11 @@ main{
     margin-bottom: 20px;
     text-align: center;
 }
+.secondSection{
+    height: calc(100vh - 40vh);
 
+    background-color: var(--primary-color);
+}
 .errors {
     background-color: rgb(244, 162, 162);
     color: rgb(131, 29, 29);
