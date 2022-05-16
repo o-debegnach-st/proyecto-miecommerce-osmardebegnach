@@ -30,7 +30,7 @@
 
 
 
-                    <div id='divError' class="info errors">
+                    <div id='divError' class="info errors2">
                             <p>Se encontraron los siguientes errores:</p>
                             <ul>
                             </ul>
@@ -76,6 +76,7 @@
 <script>
 
     window.addEventListener("load",function(){
+
         const passwordElement = document.querySelector('#password');
         const passwordElement2 = document.querySelector('#password2');
         const msg = document.querySelector('#message');
@@ -84,6 +85,7 @@
         let formulario = document.querySelector('form.inputsregister')
         const button = document.querySelector('.boton')
         let email = document.querySelector('#email');
+
 
         function isEmpty(){
             let flag=false;
@@ -109,6 +111,7 @@
 
 
         formulario.addEventListener("submit",function (e){
+
             let errores = [];
 
             let expresion1= /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
@@ -117,12 +120,14 @@
             if(email.value ===""){
                 errores.push("El campo email no puede estar vacio");
             }
+
             if(passwordElement.value ===""){
                 errores.push("El campo contraseña no puede estar vacio");
             }
             if(passwordElement2.value ===""){
                 errores.push("El campo contraseña no puede estar vacio");
             }
+
 
             if(!email.value.match(expresion1)){
                 errores.push("El email debe tener un formato valido.")

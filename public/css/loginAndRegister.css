@@ -85,6 +85,13 @@ main{
 .errors {
     background-color: rgb(244, 162, 162);
     color: rgb(131, 29, 29);
+
+}
+
+
+.errors2 {
+    background-color: rgb(244, 162, 162);
+    color: rgb(131, 29, 29);
     display:none;
 }
 
