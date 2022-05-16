@@ -206,12 +206,6 @@ header {
     margin-left: 12px;
 }
 
-/* .open:hover ~ .menuContainer, .menuContainer:hover {
-    
-    height:220px;
-    
-}  */
-
 .open {
     height:220px
 }
