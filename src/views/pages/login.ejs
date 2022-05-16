@@ -4,7 +4,7 @@
 
   <body>
     <%- include("../partials/header", {searchBar: false}) %>
-    <main>
+      <main>
         <div class="firstSection">
         </div>
         <section class="Form">
@@ -18,11 +18,14 @@
             <form action="/login" method="POST" class="inputs">
               <div class="inputsButton">
                 <label>
-                  <input class="input-form" id="email" type="email" name="email"  placeholder="Tu nombre de usuario" />
+                  <input class="input-form" id="email" type="email" name="email" placeholder="Tu nombre de usuario" />
                 </label>
                 <label>
                   <input class="input-form" id="password" type="password" autocomplete="off" name="password"
                     placeholder="Tu contraseña" />
+                </label>
+                <label class="check-label">
+                  <input class="input-form" id="recuerdame" type="checkbox" /> <span>Recuerdame</span>
                 </label>
                 <button disabled class="button-form boton" type="submit" name="">Iniciar Sesión</button>
               </div>
@@ -40,49 +43,16 @@
         </div>
 
         <% if (locals.errors) { %>
-         <%- include('../partials/modal.ejs',{
-           title: 'Inicio de sesion incorrecto',
-           body: 'Usuario o contraseña incorrecta',
-           hasSecondaryButton: false,
-           primaryAction: 'close',
-           isOpen: true
-         }) %> 
-        <% } %>
+          <%- include('../partials/modal.ejs',{ title: 'Inicio de sesion incorrecto' ,
+            body: 'Usuario o contraseña incorrecta' , hasSecondaryButton: false, primaryAction: 'close' , isOpen: true
+            }) %>
+            <% } %>
       </main>
       <%- include("../partials/footer") %>
-      <script src="js/modeLR.js"></script>
+        <script src="js/modeLR.js"></script>
 
   </body>
 
-<script>
-  window.addEventListener("load",function() {
-    const passwordElement = document.querySelector('#password');
-    let formulario = document.querySelector('form.inputs')
-    const button = document.querySelector('.boton')
-    let email = document.querySelector('#email');
-
-    function isEmpty() {
-      let flag = false;
-      if (email.value === '') {
-        flag = true;
-      }
-      if (passwordElement.value === '') {
-        flag = true;
-      }
-
-
-      if (flag === true) {
-        button.disabled = true;
-        button.style.backgroundColor = 'grey'
-      } else {
-        button.disabled = false;
-        button.style.backgroundColor = 'rgba(12, 176, 147, 1)'
-      }
-    }
-
-    formulario.addEventListener("keyup", isEmpty)
-
-  })
-</script>
+  <script src="/js/login.js"></script>
 
 </html>
