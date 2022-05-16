@@ -7,6 +7,7 @@ const cuenta=document.querySelector(".cuenta")
 
 changeModeLR.addEventListener('click',()=>{
     secondSection.classList.toggle("darkMode")
+    changeModeLR.classList.toggle("darkMode")
     header.classList.toggle("darkMode")
     container.classList.toggle("darkMode")
     buttonForm.classList.toggle("darkmode")
