@@ -108,7 +108,7 @@ header {
     background-color: var(--gris-oscuro);
 }
 
-/* Inicio User Menu */
+/* Inicio User Menu==========================================================================*/
 
 .menuContainer {
     display: block;
@@ -138,13 +138,21 @@ header {
     
 }
 .changeMode{
-    background: #343D5B;
+    background-color: transparent;
+    padding: 6px 8px;
+    
     border-radius:1000px;
     border:none;
     position:relative;
     cursor:pointer;
     display: flex;
+    align-items: center;
+    width: 100%;
     outline:none;
+}
+
+.changeMode:hover{
+    background-color: rgba(0, 0, 0, .15);
 }
 
 .menuContainer a {
@@ -191,23 +199,12 @@ header {
 .tema {
     display: flex;
     justify-content: left;
+    margin: 10px;
 }
 
-.tema img {
-    height: 16px;
-    width: 16px;
-    align-self: center;
-    margin-top: 7px;
-    margin-left: 15px;
-}
-
-.tema p {
-    margin-top: 9px;
-    margin-left: 12px;
-}
 
 .open {
-    height:220px
+    height: 233px;
 }
 
 #fondoBlur {
