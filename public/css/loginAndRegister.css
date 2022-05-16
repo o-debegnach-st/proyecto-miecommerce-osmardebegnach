@@ -2,16 +2,9 @@
 
 main{
     height: calc(100vh - 170px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
 }
 
 .firstSection{
-    position: absolute;
-    top: 0;
-    right: 0;
     height:35vh;
     width:100vw;
     background-color: var(--verde);
@@ -19,10 +12,15 @@ main{
 }
 
 .Form{
-    z-index: 1;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 .Form article{
+
     display:flex;
     justify-content: center;
     padding-top: 15px;
@@ -44,9 +42,7 @@ main{
     border-radius: 16px;
     background-color: var(--secondary-color);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    min-width: 300px;
-    width: 80vw;
-    max-width: 370px;
+    min-width: 25vw;
 }
 
 .titulo{
@@ -64,15 +60,60 @@ main{
     height: 36px;
     border-radius: 16px;
     padding: 8px 16px;
+    border-color:rgba(153, 153, 153, 1);
     outline: 0 none;
     display: block;
     margin-bottom: 18px;
+    border-style: none;
     border: 1px solid rgba(0, 0, 0, 0.5);
     background-color: var(--secondary-color);
 }
 .input-form::placeholder {
     color: rgba(153, 153, 153, 1);
 }
+.changeModeLR{
+    background: var(--button-color);
+    border-radius:1000px;
+    border:none;
+    position:relative;
+    cursor:pointer;
+    display: flex;
+    outline:none;
+}
+
+.changeModeLR::after{
+    content: "";
+    display:block;
+    width:15px;
+    height:15px;
+    position:absolute;
+    background: var(--secondary-color);
+    top:0;
+    left:0;
+    right:unset;
+    border-radius:100px;
+    transition: .3s ease all;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.changeModeLR.darkMode {
+    background: white;
+}
+.changeModeLR.darkMode::after{
+    right:0;
+    left:unset;
+    
+}
+
+.changeModeLR span{
+    width:15px;
+    height:15px;
+    display:block;
+    background: none;
+    color:#fff;
+}
+
+
 
 .button-form{
     width: 100%;
@@ -81,7 +122,6 @@ main{
     color: white;
     text-decoration: none;
     text-align: center;
-    background-color: grey;
 }
 
 .info {
@@ -92,12 +132,12 @@ main{
 }
 .secondSection{
     height: calc(100vh - 40vh);
+    width:100vw;
     background-color: var(--primary-color);
 }
 .errors {
     background-color: rgb(244, 162, 162);
     color: rgb(131, 29, 29);
-    display:none;
 }
 
 .success {
@@ -114,33 +154,9 @@ main{
 
     }
 
+
     .error-msg{
         color: rgb(255, 75, 43);
         text-align: center;
     }
-}
-
-#message{
-    font-size: 12px;
-    padding:3%;
-    display:none;
-    margin-bottom: 2px;
-
-}
-
-
-
-
-.input-form2{
-    width: 100%;
-    height: 36px;
-    border-radius: 16px;
-    padding: 8px 16px;
-    outline: 0 none;
-    display: block;
-    margin-bottom: 3px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-}
-.input-form2::placeholder {
-    color: rgba(153, 153, 153, 1);
 }

@@ -137,6 +137,15 @@ header {
     background-color: rgba(0, 0, 0, 0.15);
     
 }
+.changeMode{
+    background: #343D5B;
+    border-radius:1000px;
+    border:none;
+    position:relative;
+    cursor:pointer;
+    display: flex;
+    outline:none;
+}
 
 .menuContainer a {
     text-decoration: none;
