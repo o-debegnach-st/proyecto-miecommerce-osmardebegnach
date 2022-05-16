@@ -238,8 +238,8 @@ header {
     .menuContainer {
         top:0;
         height: 100vh;
-        width: 40%;
-        border: 10% 0 0 10%;
+        width: 60%;
+        border-radius: 16px 0 0 16px;
         padding: 20px;
         position: absolute;
         right: -850px;
