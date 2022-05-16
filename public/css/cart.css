@@ -9,10 +9,12 @@
 
 h2 {
     font-weight: 400;
+    font-size: 24px;
+    padding-bottom: 10px;
 }
 
 .back-button {
-    font-size: 20px;
+    font-size: 16px;
     color: black;
     padding-top: 20px;
 }
@@ -122,4 +124,26 @@ input[type=number]::-webkit-outer-spin-button {
     right: 0;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .cart {
+        padding: 0 4%;
+    }
+    h2 {
+        font-size: 26px;
+    }
+    .back-button {
+        padding-top: 0;
+        font-size: 18px;
+    }
+    .cart-product {
+        flex-direction: column;
+        align-items: flex-start;
+        height: 120px;
+    }
+    .cart-product-info-right {
+        align-self: flex-end;
+        gap: 40px;
+    }
 }
