@@ -2,10 +2,20 @@
 
 :root {
   --verde: #0cb093;
-  --gris-claro: #efefef;
+  --primary-color: #efefef;
   --gris-oscuro: #494f51;
-  --blanco: #fff;
+  --button-color:#494f51;
+  --secondary-color: #fff;
   --negro: #333;
+  --font-color: #000000;
+  --blanco: #FFF;
+}
+
+.darkMode {
+  --primary-color: #222222;
+  --secondary-color: #494F51;
+  --font-color: #FFFFFF;
+  --button-color: #222222;
 }
 
 * {
@@ -25,7 +35,7 @@ button {
 }
 
 body {
-  background-color: var(--gris-claro);
+  background-color: var(--primary-color);
   min-height: 100vh;
   position: relative;
   padding-top: 85px !important;
@@ -110,7 +120,7 @@ nav.categorias .navlink {
   align-items: center;
   width: 100%;
   padding: 14px 0px;
-  border-right: solid 2px var(--blanco);
+  border-right: solid 2px var(--secondary-color);
 }
 
 nav.categorias .navlink:last-child {
@@ -126,7 +136,7 @@ nav.categorias .navlink:hover img{
 }
 
 .button-hover {
-  background-color: var(--gris-oscuro);
+  background-color: var(--button-color);
   cursor: pointer;
 }
 .button-hover:hover {
