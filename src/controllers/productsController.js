@@ -66,6 +66,7 @@ const products = (req, res, next) => {
 		let all = values[0].filter(
 			(product) => productId.category === product.category
 		);
+		
 		res.render("pages/products", {
 			interes: all.slice(0, 5),
 			product: productId,

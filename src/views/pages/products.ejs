@@ -1,60 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include("../partials/head", {ruta: '/css/products.css'}) %>
+<%- include("../partials/head", {ruta: '/css/products.css' }) %>
 
   <body>
     <%- include("../partials/header", {searchBar: true}) %>
     <main class="bodyContainer" id="seccion-principal">
-        <nav class="menuNav">
-          <a href="/" class="backButton">
-            <img class="flechaIzquierda" src="/images/Vector.png" alt="flecha">
-            <p>Volver al listado</p>
-          </a>
-          <img class="flechaDerecha" src="/images/Vector (1).png" alt="flecha">
-          <p>Alimentos</p>
+      <nav class="menuNav">
+        <a href="/" class="backButton">
+          <img class="flechaIzquierda" src="/images/Vector.png" alt="flecha">
+          <p>Volver al listado</p>
+        </a>
+        <img class="flechaDerecha" src="/images/Vector (1).png" alt="flecha">
+        <p>Alimentos</p>
 
-        </nav>
-        <section class="cardContainer">
-          <ul>
-            <li><img src="/images/Rectangle 17.png" alt="img1"></li>
-            <li><img src="/images/Rectangle 18.png" alt="img2"></li>
-            <li><img src="/images/Rectangle 19.png" alt="img3"></li>
-          </ul>
+      </nav>
+      
+      <section class="cardContainer">
+        <ul id="gallery">
+          <% if (product.gallery.length> 0) { %>
+            <button class="gallery-btn" data-image=<%= product.image %> ></button>
+            <% product.gallery.forEach(picture=> { %>
+              <button class="gallery-btn"  data-image=<%= picture %>></button>
+            <% }) %>
+          <% } %>
+        </ul>
+        <div class="img-container">
           <img class="imagenProducto" src="<%=product.image%> " alt="img4">
-          <div class="infoContainer">
-            <p class="nombreProducto"><%=product.title%></p>
-            <div class="puntajeContainer">
-              <h3><%=product.price%> </h3>
-              <p class="puntos">PUNTOS</p>
+        </div>
+        <div class="infoContainer">
+          <p class="nombreProducto">
+            <%=product.title%>
+          </p>
+          <div class="puntajeContainer">
+            <h3>
+              <%=product.price%>
+            </h3>
+            <p class="puntos">PUNTOS</p>
+          </div>
+          <form action="/api/cart" method="post">
+            <div class="hidden">
+              <input type="text" value="<%= product.title %>" name="nombre">
+              <input type="text" value="1" name="cantidad">
+              <input type="text" value="<%= product.price %>" name="puntos">
+              <input type="text" value="<%= product.image %>" name="imagen">
+              <input type="text" value="<%= product._id %>" name="productoId">
             </div>
-            <form action="/api/cart" method="post">
-              <div class="hidden">
-                <input type="text" value="<%= product.title %>" name="nombre">
-                <input type="text" value="1" name="cantidad">
-                <input type="text" value="<%= product.price %>" name="puntos">
-                <input type="text" value="<%= product.image %>" name="imagen">
-                <input type="text" value="<%= product._id %>" name="productoId">
-              </div>
-              <button class="agregarCarrito button-hover" <%= !locals.userLogged ? 'disabled' : '' %> >Agregar al carrito</button>
-            </form>
-            <p class="descripcionProducto">
-              <%=product.description %> 
-            </p>
-          </div>
-        </section>
-    
-        <section id="interes">
-          <h2 class="titulo">Te puede interesar</h2>
-          <div class="grid">
-            <% interes.forEach(producto => { %> <%-
-            include('../partials/productCard.ejs', {producto}) -%> <% }) %>
-          </div>
-        </section>
-      </main>
-      <%- include('../partials/barraCategorias.ejs') %>
+            <button class="agregarCarrito button-hover" <%=!locals.userLogged ? 'disabled' : '' %> >Agregar al
+              carrito</button>
+          </form>
+          <p class="descripcionProducto">
+            <%=product.description %>
+          </p>
+        </div>
+      </section>
 
-        <%- include("../partials/footer") %>
+      <section id="interes">
+        <h2 class="titulo">Te puede interesar</h2>
+        <div class="grid">
+          <% interes.forEach(producto=> { %> <%- include('../partials/productCard.ejs', {producto}) -%>
+              <% }) %>
+        </div>
+      </section>
+    </main>
+    <%- include('../partials/barraCategorias.ejs') %>
 
+    <%- include("../partials/footer") %>
+
+    <script src="/js/imageGallery.js"></script>
   </body>
 
 </html>

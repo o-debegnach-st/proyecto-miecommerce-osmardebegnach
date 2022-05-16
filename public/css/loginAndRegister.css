@@ -1,27 +1,26 @@
 main{
     height: calc(100vh - 170px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .firstSection{
+    position: absolute;
+    top: 0;
+    right: 0;
     height:35vh;
     width:100vw;
     background-color: rgba(12, 176, 147, 1);
     border-top-color: black;
 }
 
-
-
-
 .Form{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+    z-index: 1;
 }
 
 .Form article{
-
     display:flex;
     justify-content: center;
     padding-top: 15px;
@@ -39,7 +38,9 @@ main{
     border-radius: 16px;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    min-width: 25vw;
+    min-width: 300px;
+    width: 80vw;
+    max-width: 370px;
 }
 
 .titulo{
@@ -74,37 +75,4 @@ main{
     color: white;
     text-decoration: none;
     text-align: center;
-}
-
-.info {
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.errors {
-    background-color: rgb(244, 162, 162);
-    color: rgb(131, 29, 29);
-}
-
-.success {
-    background-color: rgb(128, 184, 234);
-    color: rgb(35, 35, 100);
-}
-
-@media (min-width: 1399.98px) {
-    .Form{
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-    }
-
-
-    .error-msg{
-        color: rgb(255, 75, 43);
-        text-align: center;
-    }
 }

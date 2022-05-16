@@ -4,7 +4,7 @@
 
   <body>
     <%- include("../partials/header", {searchBar: false}) %>
-      <main>
+    <main>
         <div class="firstSection">
         </div>
         <section class="Form">
@@ -14,20 +14,9 @@
             </div>
             <form action="/login" method="POST" class="inputs">
               <div class="inputsButton">
-                
-                <% if(locals.errors && errors.email) { %>
-                  <p class="error-msg">
-                    <%=errors.email.msg %>
-                  </p>
-                <% } %>
                 <label>
                   <input class="input-form" id="email" type="email" name="email"  placeholder="Tu nombre de usuario" />
                 </label>
-                <% if(locals.errors && errors.password) { %>
-                  <p class="error-msg">
-                    <%= errors.password.msg %>
-                  </p>
-                <% } %>
                 <label>
                   <input class="input-form" id="password" type="password" autocomplete="off" name="password"
                     placeholder="Tu contraseña" />
@@ -47,6 +36,15 @@
         <div class="secondSectionLogin">
         </div>
 
+        <% if (locals.errors) { %>
+         <%- include('../partials/modal.ejs',{
+           title: 'Inicio de sesion incorrecto',
+           body: 'Usuario o contraseña incorrecta',
+           hasSecondaryButton: false,
+           primaryAction: 'close',
+           isOpen: true
+         }) %> 
+        <% } %>
       </main>
       <%- include("../partials/footer") %>
 
