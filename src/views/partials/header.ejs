@@ -14,7 +14,6 @@
                 <% } %>
             </a>
             <button class="button-hover header-icon header-user-card " >
-           <!--  onclick="document.getElementById('userMenu').classList.toggle('hidden')" -->
                 <img src="/images/Ellipse 1.svg" alt="Foto de usuario">
                 <span class="header-username"><%= locals.userLogged.email.split("@")[0] %></span>
             </button>
@@ -27,4 +26,5 @@
                 <button id="changeModeLR">Dark Mode</button>
             </nav>
         <% } %>
+    <script src="/js/menu.js"></script>
 </header>

@@ -9,4 +9,6 @@ router.get('/suggested', suggestedProducts)
 
 router.get('/mostwanted', mostwantedProducts)
 
+router.get("*", (req, res) => res.render('pages/notFound'))
+
 module.exports = router

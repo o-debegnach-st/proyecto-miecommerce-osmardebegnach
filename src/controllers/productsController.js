@@ -61,17 +61,20 @@ const root = (req, res) => {
 
 const products = (req, res, next) => {
 	let { id } = req.params;
-	Promise.all([getAll(), getProductById(id)]).then((values) => {
-		let productId = values[1];
-		let all = values[0].filter(
-			(product) => productId.category === product.category
-		);
-		
-		res.render("pages/products", {
-			interes: all.slice(0, 5),
-			product: productId,
-		});
-	});
+	Promise.all([getAll(), getProductById(id)])
+		.then((values) => {
+			let productId = values[1];
+			let all = values[0].filter(
+				(product) => productId.category === product.category
+			);
+			res.render("pages/products", {
+				interes: all.slice(0, 5),
+				product: productId,
+			});
+		})
+		.catch(err => {
+			res.render("pages/notFound")
+		})
 };
 
 const getAllProducts = async (req, res) => {
