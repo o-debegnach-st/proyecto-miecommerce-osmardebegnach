@@ -92,7 +92,6 @@ main{
 }
 .secondSection{
     height: calc(100vh - 40vh);
-
     background-color: var(--primary-color);
 }
 .errors {
