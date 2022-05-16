@@ -12,7 +12,8 @@ window.addEventListener('load', (event) => {
     let recordar = check.checked
     if(recordar){
       localStorage.setItem('userName', userName.value)
-      console.log('recordado');
+    }else if (localStorage.userName){
+      localStorage.removeItem('userName')
     }
   })
 });
