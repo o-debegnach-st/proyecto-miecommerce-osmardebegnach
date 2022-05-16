@@ -1,5 +1,6 @@
 article.card-producto {
-    background-color: var(--blanco);
+    background-color: var(--secondary-color);
+    color: var(--switch-black-white);
     border-radius: 16px;
     padding: 8px;
     min-width: 244px;

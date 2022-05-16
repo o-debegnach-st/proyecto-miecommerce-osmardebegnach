@@ -10,7 +10,7 @@
     margin-left: 8px;
     margin-right: 8px;
     margin-bottom: 9px;
-   
+    color: var(--switch-black-white);
 }
 
 .flechaIzquierda{
@@ -25,6 +25,7 @@
 
 .cardContainer{
     background-color: var(--secondary-color);
+    color: var(--switch-black-white);
     border-radius: 16px;
     margin:0 auto;
     margin-bottom: 20px;
@@ -86,7 +87,7 @@
     width: 100%;
     height:36px;
     border-radius: 16px;
-    background-color: #494F51;
+    background-color: var(--button-focus-color);
     color: white;
     font-size: 12px;
     font-style: normal;

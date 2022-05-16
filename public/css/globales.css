@@ -2,20 +2,30 @@
 
 :root {
   --verde: #0cb093;
+  --negro: #333;
+  --blanco: #FFF;
   --primary-color: #efefef;
   --gris-oscuro: #494f51;
   --button-color:#494f51;
+  --button-focus-color: #494f51;
   --secondary-color: #fff;
-  --negro: #333;
+  --switch-black-white: black;
   --font-color: #000000;
-  --blanco: #FFF;
+  --header-color: rgba(255, 255, 255, 0.25);
+  --searchbar-color: rgba(0, 0, 0, 0.5);
+  --products-number-color: white;
 }
 
 .darkMode {
   --primary-color: #222222;
   --secondary-color: #494F51;
+  --switch-black-white: white;
   --font-color: #FFFFFF;
   --button-color: #222222;
+  --button-focus-color: #333;
+  --header-color: rgba(0, 0, 0, 0.25);
+  --searchbar-color: rgba(255, 255, 255, 0.5);
+  --products-number-color: #333;
 }
 
 * {
@@ -42,7 +52,6 @@ body {
 }
 
 .button-hover {
-  background-color: var(--button-color);
   cursor: pointer;
 }
 

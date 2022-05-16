@@ -5,6 +5,7 @@
     gap: 8px;
     min-height: 100vh;
     font-size: 14px;
+    color: var(--switch-black-white);
 }
 
 h2 {
@@ -19,7 +20,7 @@ h2 {
     padding-top: 20px;
 }
 .back-button:visited {
-    color: black;
+    color: var(--switch-black-white);
 }
 
 .cart-products {
@@ -57,8 +58,10 @@ h2 {
     flex-basis: 300px;
 }
 .cart-button {
-    background-color: #494F51;
+    background-color: var(--button-focus-color);
     border-radius: 20px;
+    border: 1px solid;
+    border-color: var(--searchbar-color);
     color: white;
     padding: 8px 25px;
     text-decoration: none;
@@ -95,8 +98,10 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 .cart-product-number {
-    background-color: var(--secondary-color);
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    background-color: var(--products-number-color);
+    color: var(--switch-black-white);
+    border: 1px solid;
+    border-color: var(--searchbar-color);
     border-radius: 16px;
     width: 80px;
     height: 32px;
@@ -109,6 +114,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .number-input button {
   background-color: transparent;
+  color: var(--switch-black-white);
   border: none;
   width: 2rem;
   height: 2rem;
@@ -144,6 +150,6 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .cart-product-info-right {
         align-self: flex-end;
-        gap: 40px;
+        gap: 20px;
     }
 }
