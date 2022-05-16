@@ -29,7 +29,7 @@ header {
 }
 
 .search-bar {
-    width: 70%;
+    width: 60%;
     height: 32px;
     padding-left: 20px;
     border-radius: 30px;
@@ -251,5 +251,8 @@ header {
     }
     #fondoBlur {
         opacity: .4;
+    }
+    .search-bar {
+        width: 70%;
     }
 }
