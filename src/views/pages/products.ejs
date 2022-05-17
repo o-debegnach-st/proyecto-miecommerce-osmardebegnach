@@ -17,7 +17,7 @@
       <section class="cardContainer">
         <ul id="gallery">
           <% if (product.gallery.length> 0) { %>
-            <button class="gallery-btn" data-image=<%= product.image %> ></button>
+            <button class="gallery-btn activo" data-image=<%= product.image %> ></button>
             <% product.gallery.forEach(picture=> { %>
               <button class="gallery-btn"  data-image=<%= picture %>></button>
             <% }) %>

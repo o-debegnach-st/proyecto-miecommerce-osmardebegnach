@@ -111,7 +111,7 @@ header {
     background-color: var(--gris-oscuro);
 }
 
-/* Inicio User Menu */
+/* Inicio User Menu==========================================================================*/
 
 .menuContainer {
     display: block;
@@ -139,14 +139,17 @@ header {
     
 }
 .changeMode{
-    background: var(--secondary-color);
-    margin-top: 3px;
+    background-color: transparent;
+    padding: 6px 8px;
+    
     border-radius:1000px;
     border:none;
     position:relative;
     cursor:pointer;
     display: flex;
     justify-content: center;
+    align-items: center;
+    width: 100%;
     outline:none;
     color: var(--switch-black-white);
 }
@@ -154,6 +157,10 @@ header {
 .changeMode p{
     align-self: center;
     padding-bottom: 3px;
+}
+
+.changeMode:hover{
+    background-color: rgba(0, 0, 0, .15);
 }
 
 .menuContainer a {
@@ -199,25 +206,13 @@ header {
 
 .tema {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    margin: 10px;
 }
 
-.tema img {
-    height: 16px;
-    width: 16px;
-    align-self: center;
-    margin-top: 7px;
-    margin-left: 15px;
-}
-
-.tema p {
-    margin-top: 9px;
-    margin-left: 7px;
-    padding-right: 6px;
-}
 
 .open {
-    height:220px
+    height: 233px;
 }
 
 #fondoBlur {
@@ -251,8 +246,8 @@ header {
     .menuContainer {
         top:0;
         height: 100vh;
-        width: 40%;
-        border: 10% 0 0 10%;
+        width: 60%;
+        border-radius: 16px 0 0 16px;
         padding: 20px;
         position: absolute;
         right: -850px;
