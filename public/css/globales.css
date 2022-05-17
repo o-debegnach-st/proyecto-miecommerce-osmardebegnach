@@ -53,6 +53,7 @@ body {
 
 .button-hover {
   cursor: pointer;
+  background-color: var(--button-color);
 }
 
 .button-hover:hover {
