@@ -148,6 +148,7 @@ header {
     display: flex;
     justify-content: center;
     outline:none;
+    color: var(--switch-black-white);
 }
 
 .changeMode p{
