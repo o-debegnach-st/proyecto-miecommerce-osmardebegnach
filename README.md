@@ -17,6 +17,10 @@ En la raiz se encuentra el modulo app.js, dentro de la cual se importa express p
 
 En el root se creo la carpeta src, dentro la carpeta controllers, en la misma estan los archivos productsController.js y usersController.js , que contienen la logica de la aplicacion. Tambien en src se agregaron las carpetas middlewares con funciones de validacion, utils con funciones auxiliares y db donde se guardan en un json la informacion de los usuarios. 
 
+**_*ACTUALIZACION 2*_**
+Se creo la carpeta js, en donde se guardan los archivos .js que contienen la inteligencia que dispara lso eventos, como el dark mode, ventanas modales, almacenamiento en local starage.
+Se consiguio que el sitio web sea responsive, y que la barra del menu de usuario se adapte a distintos tamaños de ventanas.
+
 ## Tecnologias
  *  [ejs]: Version 3.1.7
  *  [express]: Version 4.18.0
@@ -41,6 +45,7 @@ El proyecto esta conformado por :
 
 6. Checkout.
 7. Error 404 page.
+
 
 ### Partials - Diseño atomico
 

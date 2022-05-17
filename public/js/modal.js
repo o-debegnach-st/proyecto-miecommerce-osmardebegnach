@@ -60,8 +60,8 @@ window.addEventListener("load", (event) => {
 
   let primaryAction = primaryButton.dataset.action || 'close';
   
-  console.log(primaryButton)
-
+/*   console.log(primaryButton)
+ */
   primaryButton.innerHTML = getActionMessage(primaryAction)
   primaryButton.addEventListener('click', () => {
     console.log('clickeado primario');
