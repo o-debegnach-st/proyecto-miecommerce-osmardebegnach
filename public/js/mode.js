@@ -5,14 +5,20 @@ const changeText = () => {
         localStorage.darkMode ? userMenuTexto.innerText = "Claro" : userMenuTexto.innerText = "Oscuro"
     }
 }
-
-if (localStorage.darkMode) {
+const toggleDarkMode = () => {
     body.classList.toggle("darkMode")
-    changeText()
 }
 
-changeMode?.addEventListener('click', () => {
-    body.classList.toggle("darkMode")
+
+window.onload = (() => {
     changeText()
-    localStorage.darkMode ? localStorage.removeItem("darkMode") : localStorage.setItem("darkMode", "true")
+    if (localStorage.darkMode) {
+        toggleDarkMode()
+    }
+
+    changeMode?.addEventListener('click', () => {
+        localStorage.darkMode ? localStorage.removeItem("darkMode") : localStorage.setItem("darkMode", "true")
+        toggleDarkMode()
+        changeText()
+    })
 })
