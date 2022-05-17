@@ -211,6 +211,10 @@
     background-color: white;
 }
 
+.gallery-btn.activo {
+    border: 2px solid var(--verde);
+}
+
 @media screen and (max-width: 768px) {
     .cardContainer{
         flex-direction: column;
