@@ -16,18 +16,14 @@ main{
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    width: 450px;
+    color: var(--switch-black-white);
 }
 
 .Form article{
-
     display:flex;
     justify-content: center;
     padding-top: 15px;
-}
-
-.cuenta {
-    color:var(--font-color);
 }
 
 .Form article p a  {
@@ -168,6 +164,20 @@ input[type="checkbox"].input-form {
     color: rgb(35, 35, 100);
 }
 
+.input-form2{
+    width: 100%;
+    height: 36px;
+    border-radius: 16px;
+    padding: 8px 16px;
+    outline: 0 none;
+    display: block;
+    margin-bottom: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+}
+.input-form2::placeholder {
+    color: rgba(153, 153, 153, 1);
+}
+
 @media (min-width: 1399.98px) {
     .Form{
         position: absolute;
@@ -184,16 +194,8 @@ input[type="checkbox"].input-form {
     }
 }
 
-.input-form2{
-    width: 100%;
-    height: 36px;
-    border-radius: 16px;
-    padding: 8px 16px;
-    outline: 0 none;
-    display: block;
-    margin-bottom: 3px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-}
-.input-form2::placeholder {
-    color: rgba(153, 153, 153, 1);
+@media screen and (max-width: 768px) {
+    .Form {
+        width: 85%;
+    }
 }

@@ -1,20 +1,18 @@
 const changeMode = document.querySelector('#changeMode')
 const userMenuTexto = document.querySelector('.user-menu-tema-texto')
+const changeText = () => {
+    if (userMenuTexto) {
+        localStorage.darkMode ? userMenuTexto.innerText = "Claro" : userMenuTexto.innerText = "Oscuro"
+    }
+}
 
 if (localStorage.darkMode) {
     body.classList.toggle("darkMode")
-    userMenuTexto.innerText = "Claro"
-} else {
-    userMenuTexto.innerText = "Oscuro"
+    changeText()
 }
 
-changeMode.addEventListener('click',()=>{
+changeMode?.addEventListener('click', () => {
     body.classList.toggle("darkMode")
-    if (localStorage.darkMode) {
-        localStorage.removeItem("darkMode")
-        userMenuTexto.innerText = "Oscuro"
-    } else {
-        localStorage.setItem("darkMode", "true")
-        userMenuTexto.innerText = "Claro"
-    }
+    changeText()
+    localStorage.darkMode ? localStorage.removeItem("darkMode") : localStorage.setItem("darkMode", "true")
 })
